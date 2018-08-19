@@ -1,0 +1,98 @@
+======================================================================
+	    TORNADO Default Planning Speed Patch
+	    (for Tornado vers. 1.0 - 1.0e)
+
+	    Vers. 1.0
+	    (c) 1995 Heinz-Bernd Eggenstein, 
+		     Basil Copeland, 
+		     Eric Joiner 
+		     (TCSC Associates)
+	  
+
+	    (this is an unofficial patch, NOT a patch by DI!!!)
+
+
+
+	    for registered TCSC users only
+
+	    This patch requires TPATCHER V 1.0 or higher
+
+
+	    M A N U A L
+	    ___________
+	   
+	    Read carefully before installing!
+
+======================================================================
+
+
+
+1) License terms
+================
+This software is NOT Shareware, Freeware or Public Domain software. Only 
+registered users of Tornado Staff and Command College (TCSC) are allowed to
+use it. This patch may not be copied or uploaded to a BBS/online service 
+without the consent of its authors. 
+
+
+2) What is this?
+================
+By default, the speed for a turning waypoint in TORNADO is set to 420 kts.
+Many TORNADO users use higher speeds, at least for the IDS Tornados. The 
+reason is that a flightplan with a higher, but more constand speed is more
+fuel efficient, because there's less need to use reheat. Currently, it's 
+tedious to change the speed for every navigation waypoint. With this patch,
+you can set the default speed to either 500kts, 520 kts (my favourite 
+setting) or even 550 kts. 
+
+Note that 520 kts or 550 kts is probably too fast for the ADV 
+Tornados if they fly at 10,000 ft or above (the same Indicated Airspeed 
+means higher True Airspeed at higher altitudes.). So you might want to 
+manually decrease the ADV's speed after applying the patch. However, since 
+there are almost always more than three times as many IDS waypoints than 
+ADV waypoints in a full 8 plane flightplan, the patch will nevertheless
+decrease the workload for mission planning.
+
+3) Limitations
+==============
+This patch will affect pre-canned flightplans for TORNADO's single missions
+and level 1-/2-campaigns. Most likely, the flightplans will be out of sync
+or will even produce red "problem" windows. For the pre-canned misisons, it's
+best to use the original 420 kts default value. The increased default value 
+is intended for Command Campaigns where the user has to edit many waypoints.
+
+
+
+4) How to install the patch
+===========================
+Just copy all files in the distribution archive of this patch to the 
+main Tornado directory (the one with the FLIGHT and AMP subdirectories).
+
+If you run Tornado from a CD-ROM, you'll have to install TDO on a hard disk
+first (it's not so easy to patch files on a CD-ROM <g>).
+
+
+You also need the generic patching program TPATCHER.EXE which should be 
+available from the same source from where you downloaded this patch.
+
+
+Then, run the batch file DSPEED.bat. That's all.
+
+
+5) How can I restore the original, unpatched files?
+===================================================
+Just run the batch file DSPEED.BAT and when prompted, choose to install 
+the original code.
+
+
+
+------------------------------------------------------------------------------
+
+			  DISCLAIMER
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+

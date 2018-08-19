@@ -1,0 +1,86 @@
+      INSTALLATION NOTES 
+      
+      for Tornado users running TORNADO from a CDROM
+
+
+There are several versions of TORNADO that can be executed from a CD-ROM.
+The versions I know all use a 'mirrored' directory structure of the CD-ROM 
+on a hard disk (you can't save log files etc to a CD-ROM!). A memory 
+resident program is then used to 'merge' this directory structure with the 
+CD-ROM's directory structure when TORNADO is executed.
+
+IF you don't want to copy all of TORNADO to a hard-disk before installing 
+MF, some additional steps have to be executed when installing TMF:
+
+
+
+STEP 1:  COPY FLIGHT.EXE & DESERT.EXE
+=====================================
+Copy the files FLIGHT.EXE and DESERT.EXE from the CD-ROM to the FLIGHT 
+sub directory in TORNADO's mirrored directory tree on your hard-disk. 
+
+E.g. if Tornado installed the mirrored directory structure on your hard disk 
+C: in the directory TORNADO, then you should copy the file flight.exe from the
+CD-ROM to the file c:\tornado\flight\flight.exe
+
+C:\TORNADO 
+          \FLIGHT 
+                flight.exe
+                desert.exe 
+
+STEP 2: INSTALL TMF AS WITH THE DISK VERSION 
+============================================
+Copy all the files in the TMF distribution archive to the main TORNADO 
+directory on the hard-disk (C:\TORNADO in the example). Now execute 
+the install program TMF_INST
+
+
+STEP 3: SET 'PATH' AND EXECUTE EX_HD
+============================================
+Before you run Tornado, you have to add the FLIGHT subdirectory on the hard
+disk to the PATH list. E.g. if in the example given above your current PATH 
+setting is 
+
+PATH=C:\DOS;C:\BIN;C:\BORLANDC\BIN
+
+then type 
+
+SET PATH=C:\TORNADO\FLIGHT;C:\DOS;C:\BIN;C:\BORLANDC\BIN
+
+at the DOS-prompt (note that the FLIGHT directory was inserted at the FRONT).
+
+(it's more convenient to change the PATH statement in the autoexec.bat file 
+you use with TORNADO than to type in the new PATH setting manually everytime 
+you want to play TORNADO).
+
+Before starting Tornado, you have to load a tiny memory resident program, 
+EX_HD.COM, before running Tornado (you can load it 'high'): 
+
+LH EX_HD.COM
+
+This program tricks Tornado into believing that there are no files DESERT.EXE 
+and FLIGHT.EXE on the CD-ROM, so TORNADO will look in the directories 
+specified in the PATH environment variable. This way Tornado will load the
+TMF files. To remove EX_HD from memory, RE-BOOT YOUR COMPUTER AFTER PLAYING
+TORNADO.
+
+
+         SUMMARY 
+         ======= 
+         =======
+
+
+To install TMF on CD-ROM based Tornado installations,
+
+1) copy files flight.exe and desert.exe into the mirror directory structure 
+   on the hard disk, subdirectory FLIGHT
+
+2) Install TMF as described in MANUAL.TMF
+
+3) Make sure the directory that flight.exe and desert.exe were copied to 
+   appear in the PATH list of directories whenever you play TORNADO
+
+4) Before starting Tornado, execute the program EX_HD.
+
+
+

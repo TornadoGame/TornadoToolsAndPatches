@@ -1,0 +1,97 @@
+==================================================================
+TORNADO SB DETECTION PATCH FOR FAST COMPUTERS
+
+Vers 1.0
+(c) 1995 Heinz-Bernd Eggenstein
+
+This patch requires TPATCHER.EXE Vers 1.0 or higher
+
+==================================================================
+
+What's this all about?
+=========================
+Many users of Tornado versions 1.0c - 1.0e have reported problems when 
+using a Soundblaster compatible cards. One of the problems is a frequent 
+lock-up when firing the cannon (this problem is addressed by *another*
+patch, T_CANNON.ZIP. The other problem occurs when running Tornado on 
+fast machines: TDO will fail to detect the presence of a Soundblaster
+compatible card and will display the error message "System error: 
+sound card not detected". This patch is a first attempt to cure this
+problem.
+
+THIS PATCH REQUIRES THE PROGRAM TPATCHER.EXE. TPATCHER should be
+available from the same source you downloaded this patch from.
+
+
+This is a first version of a patch to correct the problem. It should 
+work with the following versions of Tornado:
+
+European (DI) versions 1.0c, 1.0d, 10.e
+
+American Versions 1.0c, 1.0d
+
+And American Versions 1.0d patched with the European 1.0e patch.
+
+It will not work with the Trimark Interactive 1.0e Edition of Tornado.
+        ===    
+The reason for this is that in the Trimark release, Soundblaster support 
+was intentionally disabled internally.
+
+  
+
+Instructions:
+
+1) copy all the files in the distribution archive of this patch to the main 
+Tornado directory. Of course, you have to run TDO from a hard disk because 
+otherwise it's difficult to patch files on a CD-ROM :)
+
+2) make backup copies of all *.exe in the FLIGHT subdirectory. Remember, this 
+is just a beta test version
+
+3) Run SB_dtct.bat. This calls the T_PATCHER.EXE program that performs the 
+patch. The program will look into every file flight\ *.exe for cannon sounds. 
+If one is found, you can choose whether to install the original or one of 
+three patches. Using this menu, you will be able to undo the patch 
+by re-installing the original code fragment.
+
+4) Keep your fingers crossed
+
+5) Run Tornado and select SoundBlaster sound effects in the Preferences 
+   Screen.
+
+
+Good luck!!
+
+#include <std/disclaimer> :
+
+                          DISCLAIMER
+
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+
+I strongly recommend to make a backup of the files FLIGHT\*.exe before
+installing this patch.
+
+
+-----------------------------------------------------------------------
+            
+Please send any commentaries, especially if this patch should NOT work for 
+you, to
+
+Heinz-Bernd Eggenstein, CIS:100430,1446
+Internet: 100430.1446@compuserve.com
+
+
+Any feedback on this patch is welcome!
+
+-----------------------------------------------------------------------
+
+
+
+
+

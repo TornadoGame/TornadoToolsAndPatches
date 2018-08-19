@@ -1,0 +1,28 @@
+(every line in this file not starting with '[' is a comment)
+
+This file is a printer configuarion file.
+
+
+You should be able to create a file like this to configure
+tmf to work with your printer.
+
+see the file nec24l.pcf for additional comments
+
+[Title=PCL level III: HP Deskjet+ 300 DPI Full Page]
+[Landscape=Yes]
+[Dots=2400]
+[ColMode=No]
+[GStart=27,42,116,51,48,48,82,27,42,114,48,65]
+      ;;ESC * t 3 0 0 R ESC * r 0 A
+
+[GEnd=27,42,114,66,12]
+   ;; ESC * r B FF
+[LStart=27,42,98,51,48,48,87]
+     ;; ESC * b 3 0 0 W
+[LEnd=]
+[BitRev=No]
+
+
+
+
+

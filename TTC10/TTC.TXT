@@ -1,0 +1,135 @@
+Tornado Time Compression TSR                            October 3, 1993
+----------------------------                            ---------------
+
+TTC is a simple TSR that allows time compression during Tornado missions.
+Time compression makes events happen faster, and is normally used to
+quickly skip "less interesting" parts of a mission. In Tornado, the
+outcome of a mission might not always be successful. The mission must
+be aborted and repeated unless you want your favorite "pilot" to be
+forever KIA. If nothing else is changed a repeated mission will closely
+resemble the original. Often this implies a lot of waiting (in real-time)
+while the auto-pilot goes from turn-point to turn-point. YOU know that
+until way-point so-and-so is reached nothing interesting will happen.
+And you will go and make a cup of cofee. But after several retries you
+sort of get fed up with making cofee, and you don't really have anything
+else (short-term) to do. It gets a bit boring (and timeconsuming) to
+wait for the action (sorry DI). TTC will reduce the waiting time by a
+factor 2-8.
+
+Another feature of TTC is time-limited compression. As TTC is not an
+integral part of Tornado (in fact it knows nothing about Tornado :-)
+it cannot switch itself off when something happens. To partly remedy
+this I have included the possibility to turn on compression for a
+given time interval from 10 to 80 seconds. This time is "Tornado time".
+Say you have a TTG of 1:20 (80 seconds) and you want to compress until
+TTG 0:20. Then you simply select 60 seconds of compression REGARDLESS
+of the compression factor. Hence the compressor always runs in
+"Tornado time". You can even change the compression factor during
+timed compression.
+
+Here is how it is done. Before launching tornado you start TTC. It
+will give you some extra keyboard controls to speed up things. The
+time compression keys are:
+
+      Alt+1 to Alt+8
+
+Alt+1 turns off time compression while Alt+2 to Alt+8 gives compression
+factors of 2 to 8. The compressor remains active until you turn it off
+or until is it turned off automatically by a time-limit (see below).
+The time-limited compression keys are:
+
+      Ctrl+1 to Ctrl+8
+
+They temporarily activate compression for from 10 (Ctrl+1) to
+80 (Ctrl+8) seconds. If compression is already active it will be
+limited to the given time interval. If no compression is active TTC
+will use the compression factor most recently used (or 4 if you never
+activated the compressor). During the compression interval you can
+change the factor with the Alt keys or reset a time period with the
+Ctrl keys.
+
+You can turn off compression ANY TIME by simply pressing and releasing
+the Alt or Ctrl key (or pressing Alt+1). This is quite handy if
+something unexpected happens.
+
+
+FILES
+-----
+
+    TTC.TXT     This file
+    TTC.EXE     The TTC TSR
+
+
+COMMAND
+-------
+
+    TTC         To activate
+    TTC /?      To get summary
+
+
+KNOWN PROBLEMS
+--------------
+
+TTC was developed for my own use. Its written partly in C and is VERY
+simple. I just wanted time compression with as little effort as
+possible (less than one (Sun)day). So of course TTC has some
+limitations and shortcomings:
+
+o  TTC will not remove itself and will remain active after exiting
+   Tornado. Reboot your machine after playing Tornado.
+
+o  Some people might want to play Tornado in compressed mode. It can
+   be a pain that simply touching Alt or Ctrl turns off compression
+   mode. It should be selectable via an option.
+
+o  TTC takes up around 1.4K. The code actually only uses half of that,
+   but I have spent enough time shuffling those #@%&* segments around.
+   TTC should be rewritten purely in assembler.
+
+o  TTC does not know about Tornado. Hence it will activate itself when
+   you press the proper keys. To be on the safe side I suggest that
+   you keep time compression turned off when not in the actual flight
+   mode (ie. turn off compression when in the mission planner).
+
+o  I have only used TTC with my 386 33MHz and 486 33MHz machines,
+   PAS16 soundcard and normal joystick running Tornado 1.0B (European
+   version). I cannot guarantee proper operation on other configurations
+   (but see DISCLAIMER).
+
+I have used TTC for some time now (through both level 1, level 2 and
+campaigns) and have not experienced any problems other than those
+mentioned above. It should be noted, though, that time compression
+leaves less time-per-frame for Tornado. Hence calculations are less
+precise. In normal situations that has little consequence. But try
+doing an auto-pilot landing with compression factor 8 :-) Also Tornado
+will have less time for enemy tactics, so don't overdo it.
+
+
+WARNING
+-------
+In my personal opinion time compression should be used for predictable
+and/or less interesting parts only. Otherwise it may destroy the atmosphere
+of the game.
+
+
+VERSION
+-------
+This document describes TTC version 1.0 (of course) of October 3, 1993.
+I would appreciate comments (negative as well as positive) and
+suggestions. Currently I have no plans for other versions, but one
+never knows ;)
+
+
+DISCLAIMER
+----------
+TTC does not in any way modify Tornado files or running executables.
+It does not use any patching. All it does is present a slightly
+different environment to Tornado via interrupt vector hooks. To my
+knowledge it should not create any operational problems with Tornado.
+If you DO find Tornado to behave differently when using TTC please
+let me know. And stop using TTC. I do not take responsibility for any
+problems created by using TTC (lost or modified files, missions etc.).
+All I intend is to make Tornado even more playable :-)
+
+                                                    Have fun
+                                             Kenneth "ICEMAN" Larsen

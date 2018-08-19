@@ -1,0 +1,170 @@
+          T O R N A D O    J O Y S T I C K    D O C T O R  
+          Vers. 1.0
+          (c) 1995 Heinz-Bernd Eggenstein
+          For registered TCSC users only
+
+
+
+1) What's this all about?
+-------------------------
+Several Tornado users have complained about several problems concerning 
+Tornado's joystick response. 
+
+Examples:
+
+  - roll rate "to the left" by far exceeds rool rate "to the right"
+
+  - rudder pedals: yaw rate to the left exceeds yaw rate to the right
+
+  - more than sluggish pitch-up sensitivity
+  
+  - when using two sticks, moving the first sometimes makes TDO believe
+    the second stick was moved even if this is not the case
+
+I myself suffered from various problems so I decided to write a set of 
+tools to attack those problems:
+
+2) Cures for joystick problems
+------------------------------
+Before using the patch to cure any joystick problems, first try whether you
+can fix any problem by adjusting the trim wheels on your joystick. You 
+can use the program STICK.EXE that comes with this package for this purpose.
+Adjust the trim wheels so that for every joystick axis, the displayed value 
+in the centered position is halfway beween the min. and max. values when 
+deflecting the stick(s).
+
+After completing this procedure, you have to re-calibrate the stick(s) using
+the PREFERENCES screen of Tornado!
+
+
+If this doesn't work, you can try to fool the Tornado calibration routine. 
+When it asks you to put the joystick in the LOWER RIGHT  corner, DON'T move 
+the stick(s) all the way to that corner, but stop a little short of the max 
+deflection (for both axis), leaving a little room vertically and horizontally
+to the lower right corner.
+
+By experimenting a bit, you should be able to find out just how much 
+"calibration cheating" is needed to get a satisfactory joystick response.
+
+But sometimes you still won't get a satisfactory linear joystick response. 
+
+This is most most likely if you have a fast computer and a low quality game 
+port, e.g. I have experienced this problem after upgrading to a 486-DX4-100 
+processor, using the game port of my sound card.
+
+In this case, you should try to patch the joystick routine of Tornado. The
+patch can easily be reversed later.
+
+Just copy all the files in the distribution archive to the TORNADO main 
+directory (the directory with the FLIGHT subdirectory) and execute 
+T_JST_P.EXE.
+
+
+The program will then tell you what to do. It performs some joystick hardware
+evaluation, and to do this, you have to keep all the potentiometers connected 
+to your joystick port at maximum deflection for a few seconds. The program
+will tell you how and when to do this. 
+
+
+4) What's going on technically?
+-------------------------------
+Because of the %$%&%$ joystick hardware design, it's pretty hard to write a
+good joystick polling software that works both for slow and super-fast 
+computers. That's because the computer has to determine the joystick 
+deflection by measuring the time it takes for a certain bit pattern to 
+appear and disappear on the joystick port. The problem is that this 
+bit-flipping is happening so fast (in the order of a millisecond) that the 
+only reliable way to measure this time is with the help of a simple 
+counting loop, which runs at different speeds on different machines.
+
+TORNADO's stick routine seems to be pretty good, but since it has been 
+released, the execution speed of PCs have multiplied which can result in 
+certain parts of the joystick code running "too fast".
+
+The patch inserts a small waiting loop into the joystick code of Tornado, 
+which (for some reasons I do not fully understand) improves joystick 
+accuracy. 
+
+E.g. on my machine (it has an AMD-486-DX4-100), the inserted waiting loop 
+takes only about 5 micro-seconds to execute (yes, 5*10^-6 sec). So this 
+waiting loop does not decrease overall performance, e.g. framerate. The 
+patching program will perform a measurement of your joystick hardware and 
+compute the optimal waiting loop length for you.
+
+
+5) Alternative High sensitivity patch
+-------------------------------------
+Some people have complained that the high sensitivity joystick option of 
+Tornado is too sensitive to be useful. The original high sensitivity 
+option has the net effect of amplifying joystick deflection by a factor of 2,
+so that deflecting the joystick halfway in high sensitivity mode will give 
+you the same effect as a full deflection in standard sensitivity mode.
+
+The patch performed by T_JST2_P.EXE will change the high sensitivity 
+amplification factor from 2.0 to 1.333.. , so that now a 75% deflection 
+in high sensitivity mode is necessary to get the equivalent of a full 
+deflection in standard mode. 
+
+Whether you prefer the original or the patched version is a matter of taste
+and will also depend on the hardware used.
+
+
+There's also an option to install a "bypass" routine that will make Tornado
+ignore the high sensitivity setting for certain potentiometers, see remarks 
+below.
+
+
+IMPORTANT:
+----------
+
+Unlike the first patch, this high sensitivity patch will have to replace
+several (5) instances of a code fragement by slightly modified code. The 
+different instances control the different axis of different joystick 
+configurations possible. 
+
+1st instance:    1st x axis : a/c roll 
+2nd instance:    1st y axis : a/c pitch
+3rd instance:    2nd x-axis : 2-stick config: throttle (if available)  
+4th instance:    2nd y-axis : 2-stick config: rudder  (if available)  
+5th instance:    ??????????? Probably rudder pedals
+
+You don't have to install the same routine for every instance of the 
+hi-sensitivity code, you can combine different routines for the different
+potentiometers. E.g. if you like the standard sensitivity routine for 
+throttle & rudder but the dampened hi-sens. routine for the main stick,
+you can install the dampened hi-sensitivity routine for the first two 
+potentiometers and the bypass routine for the 3rd and 4th potentiometer.
+
+In the cockpit, pressing the hi-sensitivity key will now give you a somewhat
+dampened hi sens. for the main stick but will not affect the rudder and 
+throttle. Other combinations are possible as well.
+
+                          DISCLAIMER
+
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+
+I strongly recommend to make backups of the files FLIGHT\*.EXE before
+installing this patch. 
+
+
+
+
+------------------
+
+License terms
+=============
+This software is NOT Shareware, Freeware or Public Domain software. Only 
+registered users of Tornado Staff and Command College (TCSC) are allowed to
+use it. This patch may not be copied or uploaded to a BBS/online service 
+without the consent of its authors. 
+
+
+
+
+

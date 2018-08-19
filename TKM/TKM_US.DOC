@@ -1,0 +1,302 @@
+==============================================
+Tornado Keyboard Mapper  (TKM) (Donation-Ware ; see below)
+Ver 2.1 US (for US style keyboards with  101 keys)
+
+28-May-95
+
+
+written for TORNADO 1.0 - 1.0e 
+
+(c) Heinz-Bernd Eggenstein
+CompuServe: 100430,1446
+internet: eggenste@chomsky.informatik.uni-dortmund.de
+==============================================
+Has this ever happened to you? Flying at 200 ft in the middle of a complex 
+mission and under the threat of being attacked every second, you want to take 
+a quick glance at your radar screen. You switch it on, look at the screen and 
+then, with your eyes still on your monitor, you want to press CTRL-R to 
+switch the radar off again. Instead, you miss by a few millimeters and hit 
+CTRL-E.
+
+The screen darkens. You have just ejected by mistake! 
+
+Well, it happened several times to me.
+
+TKM was written to avoid this problem by changing the ejection seat trigger
+to a 'safer' keyboard command.
+
+TKM is NOT a patching program! None of the TORNADO files is supposed to 
+be modified by TKM (but see disclaimer below).
+
+There are four versions of TKM, differing in the ability to operate together 
+with the popular TTC (TORNADO TIME COMPRESSION) TSR by Kenneth Larsen and 
+in the keyboard commands assigned to various cockpit functions.
+
+To use it, just start the program corresponding to the version of TKM you 
+want to use before you run TORNADO. If you use TTC, load TTC first and 
+then either TKM_WTTC or TKM_DSWT.
+
+TKM.COM and TKM_WTTC.COM were designed to be simple and "as small as 
+possible". They only remap the ejection and ECM keys. TKM_WTTC.COM is 
+compatible with TTC, TKM.COM is for use without TTC.
+
+TKM_DS.COM and TKM_DSWT.COM are 'de luxe' versions :-). They use  
+a 'cooler' ejection trigger (both shift keys), and they also remap the 
+frequently used weapons package management and countermeasure keys 
+(K,L,C and F), that are less easy to find on the keyboard when 
+typing blindly in the midth of combat than the new keys assigned by TKM_DS 
+and TKM_DSWT. (These programs use a table to remap the keyboard layout, so 
+they could be rewritten or patched to do other keyboard layout permutations. 
+Registered users (see below) can obtain the source code of TKM by e-mail 
+(see address given above). You will need Borland C 3.1 or higher to compile 
+it).  
+
+The features of the different versions of TKM are summarized in the 
+following table: (keys in brackets [] are on the num. keypad!)
+
+--------quick reference card for TKM---
+		 
+	   |TKM.COM    |TKM_DS.COM  |
+------------------------------------|
+ejection   | CTRL +    | left SHIFT+| 
+seat       |  SCR-LOCK | right SHIFT| 
+------------------------------------|
+select     | K         | F12        |
+ package   |           |            |             
+------------------------------------|
+delivery   | L         | F11        | 
+ mode      |           |            |             
+------------------------------------|
+kneepad    | NUM-LOCK  | `/~        |
+view       |           |            |
+------------------------------------|
+drop       | F         | [INS]      |
+flares     |           |            |
+------------------------------------|
+drop       | C         | [DEL]      | 
+chaff      |           |            |             
+------------------------------------|
+roll left  | [CURSOR   | C          | \
+	   |  -LEFT]   |            |  |only active if you select keyboard
+------------------------------------|  |as input device
+roll right | [CURSOR   | F          | /
+	   | -RIGHT]   |            | 
+------------------------------------|
+yaw left = | [INS]     | [CURSOR-   | \
+rudder left|           |  LEFT]     |  |only active if you don't select
+------------------------------------|  |the 2 joysticks configuration
+yaw right =| [DEL]     | [CURSOR-   | /
+rudder r.  |           |  RIGHT]    |             
+------------------------------------|
+radar      | R         | \          |  
+	   |           |            |             
+------------------------------------|
+camera left| Z         | A          |
+	   |           |            |
+------------------------------------|
+camera     | X         | S          |
+right      |           |            |
+------------------------------------|
+flaps      | A         | Z          |
+deploy     |           |            |
+------------------------------------|
+wings back | S         | X          |
+	   |           |            |
+____________________________________/
+
+TKM_WTTC.COM: same as TKM.COM, but TTC compatible
+TKM_DSWT.COM: same as TKM_DS.COM, but TTC compatible
+
+----------------------------------------
+
+Note: TKM_DS and TKM_DSWT use the same key strokes to drop flares/chaff 
+      as the popular FALCON sim by Spectrum Holobyte, so users of FALCON
+      may find it easier to adjust to TORNADO.
+      To do this, I had to find a new location for the rudder controls 
+      ([INS] and [DEL]). I think that these functions should remain
+      on the num. keypad, while I think that the roll left/right keys are
+      less important, because I guess that almost everyone using TORNADO
+      has at least one joystick, so roll left/right keys are rarely used.
+
+
+If you are using TTC 1.0, please note that unlike the original ejection
+command CTRL+E, the double SHIFT command will NOT turn off time
+compression (it should be turned off outside of the flight part of TORNADO).  
+Press ALT or CTRL after ejecting in time compression mode.
+
+
+
+=========================NVG INTERFACE======================================
+The version 2.0 of TKM is compatible with the NVG patch that comes with 
+TMF version 1.03. To enable the following NVG switching hotkeys, you have to
+execute TKM*.COM with the '/n' command line option. e.g
+
+TKM /n
+
+or
+
+TKM_DSWT /n
+
+etc.
+
+
+Then you can adjust the NVG features using the following hotkey sequences:
+
+
+
+TKM and TKM_WTTC:
+=================
+  Toggle NVG on/off: NUM-LOCK , 9 (on the MAIN keyboard), HOME
+  Increase panel brightness: NUM-LOCK, F11, HOME
+  Decrease panel brightness: NUM-LOCK, SHIFT-F11, HOME
+  Increase view brightness: NUM-LOCK, F12, HOME
+  Decrease view brightness: NUM-LOCK, SHIFT-F12, HOME
+
+TKM_DS and TKM_DSWT:
+====================
+  Toggle NVG on/off: `/~ key , 9 (on the MAIN keyboard), HOME
+  Increase panel brightness: `/~ , L, HOME
+  Decrease panel brightness: `/~ , SHIFT-L, HOME
+  Increase view brightness: `/~  , K, HOME
+  Decrease view brightness: `/~  , SHIFT-K, HOME
+
+  (remember that the F11 and F12 keys are assigned to the weapons packages
+   management functions when you use TKM_DS and TKM_DSWT).
+
+
+
+----------------------REGISTRATION------------------------------------------
+You are allowed to use tkm*.com free of charge for 30 days. If you
+want to use it after this trial period, and you haven't already registered a
+previous version of TKM, YOU HAVE TO PAY FOR IT!
+
+No, don't send any money to the author (well, if you absolutely insist ;-)
+), instead make a donation to an organization (Red Cross, UNICEF, UNHCR,
+Doctors without Borders (Mediciens sans Frontiers) ...) that helps countries
+that are devastated by war like Bosnia, Somalia, Afghanistan, Angola, .... .
+
+Your donation should be
+   <amount you wanted to donate before reading this>
+ + <at least 7.5 US $ in your currency>
+----------------------------------------------------------------------------
+
+
+
+Have fun,
+
+Heinz-Bernd Eggenstein
+Repkestr. 26
+59368 Werne
+Fed. Rep. of Germany
+
+
+WARNING   :AFTER EXITING TORNADO, PLEASE REBOOT YOUR COMPUTER.
+	   SYSTEM CRASHES CAUSED BY THE ACTIVITY OF TKM CAN NOT
+	   BE RULED OUT!
+
+
+Disclaimer:Although I currently know of no negative
+	   effects that running TKM could have, I
+	   take no responsibilty for any damage
+	   that TKM might do to your hardware or
+	   data stored in your system.
+
+System requirement:
+	   To be able to use TKM, you need a 386 or 'higher'
+	   CPU, and approx. 1 KB of free conventional
+	   memory in addition to the memory requirements
+	   of TORNADO.
+	   You also need an AT-style keyboard (F11 and F12 keys
+	   present) to use TKM_DS and TKM_DSWT.
+	   Oh, and you need a copy of 'TORNADO' :-)
+
+-----------------------------------------------------------------------
+From the same author:
+
+TORNADO tools:
+
+Tornado Logbook Editor:  Decode the encrypted logbook files! Use it to
+			 -resurrect pilots killed by mistake
+			 -free pilots from POW camps :)
+			 -rename the infamous GrpCpt deFault
+			 -correct the rank of your pilot, if TORNADO
+			  refuses to give you a promotion because of a
+			  promotion bug in some versions of TORNADO
+			 -clone pilots to make backups
+
+Tornado SHOWPT2:         -View TORNADO's 256 color digitized pictures of
+			  aircrafts and ground vehicles from the DOS prompt.
+			 -Convert them to BMP bitmap files! True Tornadoholics
+			  use them as "wallpaper" for MS-Windows.
+
+
+Tornado Map Fax Machine: (TMF) Print snapshots of the Mission Planners Screen
+			 as kneepad masp without leaving TORNADO.
+			 Works with most 24-needle, ink jet and laser
+			 printers.
+
+
+
+
+Gen. Chuck Yeager's Air Combat:
+
+CYAC_2J:                Use a second joystick or a joystick with a throttle
+			wheel to control the thrust, instead of the keyboard.
+			It also has an optinal programmable fire-button- and 
+			view-selection-feature. Works with versions 1.0 and 
+			1.1 of CYAC.
+
+-----------------------------------------------------------------------------------
+
+TORNADO add-ons by OTHER authors:
+
+TCC by Kenneth Larsen    "Tornado Time Compression" will give you the 
+			 option of speeding up events in the simulation 
+			 to "fast-forward" the simulation to the most 
+			 interesting part of a mission. 
+ -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - 
+ TCSC by Basil Copeland,
+	 Eric Joiner &  
+	 Heinz-Bernd Eggenstein
+
+			 "Tornado Command and Staff College" is a tutorial
+			 written as a Windows 3.x helpfile. It focuses
+			 on Command Campaigns. If you have difficulties 
+			 surviving and winning Command Campaigns, this is the
+			 definitive tutorial.
+
+			 (SHAREWARE, 10US$)
+
+Soon to appear, BUT ONLY for registered TCSC users:
+
+TMORALEP by Heinz-Bernd Eggenstein:
+			 "Tornado Morale and Hard Gameplay Patch". This is an
+			 unofficial patch of Tornado to correct a slight bug
+			 having to do with the way Tornado evaluates the 
+			 success of your campaign missions.
+			 Optional: a patch to make winning a campaihn more 
+			 difficult.
+
+TMX by Heinz-Bernd Eggenstein:
+			 "Tornado Mission Exchange Tool". Fly missions 
+			 designed by others and design missions for others
+			 to fly. Can be used for competitions. Missions will be
+			 downloadable from FSFORUM or FTP, e.g.:
+			 
+			 -Take out training camps of IRA terrorists in the Far 
+			  East
+			
+			 -Prevent the shipment of stolen super-secret NATO 
+			  hardware to a foreign power.
+			
+			 -Find a route for the evacuation of an orphanage as 
+			  part of a peace-keeping mission
+
+
+"Liberation Campaigns":  Additional Command Campaigns for all 4 Warzones which                           
+			 should be much harder to win than the campaigns that
+			 come with Tornado. A real challenge.    
+			
+
+-----------------------------------------------------------------------------
+

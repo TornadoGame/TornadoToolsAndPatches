@@ -1,0 +1,237 @@
+=================================================================
+
+	T O R N A D O    N V G    P A T C H   (T_NVG)
+
+	(this is an unofficial patch, NOT a patch by DI!!!)
+ 
+	(c) 1995 Heinz-Bernd Eggenstein
+		 Repkestr. 26
+		 59368 Werne
+		 Fed. Rep. of Germany
+
+	Version 1.00 
+
+	M A N U A L
+	___________
+
+	Read carefully before installing!
+
+===================================================================
+
+0) Tornado versions supported
+-----------------------------
+T_NVG was tested on both European and US versions 1.0 ... 1.0e of Tornado.
+
+**********************************************************************
+CD-ROM versions: because T_NVG requires you to PATCH one or two files
+		 of the TORNADO files, you must execute a special 
+		 procedure, described in the file readme.cd, to use
+		 T_NVG if you run TORNADO from a CD-ROM. 
+**********************************************************************
+
+1) What is T_NVG?
+-----------------
+T_NVG simulates night vision goggles, helmet mounted devices that enhance 
+the ambient light and allow the crew to perform quasi-visual flights at 
+night.
+
+The picture that the pilot sees in this simulation is a black & green image of 
+both the cockpit and the outside world, which makes it more difficult to read 
+some color displays because you are now colorblind. However, because the image 
+is much brighter than without T_NVG, you can do some things at night that were
+impossible or too dangerous before:
+
+-Visual landing approaches
+-Strafing of ground targets
+-formation flying with your wingmen/women
+-visual searching for Scuds etc.
+
+If you want to use T_NVG, you should decide before every night vision whether 
+NVGs will be useful for the particular mission or not. E.g. if you are on a 
+LGB raid at night, NVGs will only make it more difficult for you to "read" the 
+TIALD display, you won't really need NVGs at 20000+ ft. However, if you are 
+flying a night raid near a city at low altitude and you want to avoid hitting 
+a tall building or colliding with one of your buddies, NVGs could be useful, 
+because they give you a far better night vision than the tiny FLIR image in 
+the front seat cockpit.
+
+You can switch between "normal vision" and NVG by switching the panel light
+to green or red in the 'preferences screen' of Tornado. The default is:
+
+red panel light->normal vision
+green panel light->NVG
+
+However, by editing the file NVG.INI, you can change this default, see below.
+
+Alternatively, you can also use a hot-key sequence to switch between NVG and 
+normal vision in the cockpit, but this requires that you use a memory resident 
+program, see chapter 4). 
+ 
+2) Installing T_NVG  
+-------------------
+(For information on installing the NVG feature if you run TORNADO on a CD-ROM, 
+see the file readme.CD).
+
+1.) First you have to install TMF. See the file manual.tmf for instructions.
+    If you install TMF with the TMF_INST.EXE program, you will be asked whether 
+    or not you want the NVG-feature to be installed. If you select yes, 
+    the NVG-feature will be installed automatically.
+
+IF YOU INSTALLED TMF MANUALLY:
+
+2.) Make sure you have at least 3 MB of free disk space on the drive that TORNADO
+is installed on.
+
+3.) Make sure you can load the TSG.EXE memory resident program and execute
+Tornado. 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!IMPORTANT:!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+AFTER INSTALLING THE NVG PATCH, YOU WILL HAVE TO LOAD THE TSG PROGRAM BEFORE
+EXECUTING TORNADO. WITHOUT TSG, TORNADO WILL NO LONGER RUN AFTER APPLYING 
+THE NVG PATCH.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+4.) After installing TMF, just start the batch file T_NVG_P.BAT:
+
+		     T_NVG_P <ENTER>
+
+ T_NVG_P will make backup copies of all files being patched in the Tornado
+ main directory (the directory with the AMP, FLIGHT, LOG etc subdirectory).
+
+ TO REVERSE THE PATCH, JUST COPY THE FILES FLIGHT_EXE and DESERT_.EXE 
+ (only if you have the Desert Storm extension) BACK TO THE FLIGHT SUBDIRECTORY,
+ OVERWRITING THE PATCHED FILES. YOU SHOULD ALSO RENAME OR DELETE THE FILE
+ NVG.INI
+
+5.) Have fun
+
+AGAIN: MAKE SURE YOU HAVE TSG LOADED BEFORE RUNNING TORNADO!!!!!
+If you use the TORNADO.BAT file to start Tornado, you can add the line
+
+LH TSG
+
+to the top of TORNADO.BAT to make sure TSG is loaded.
+
+
+
+3) The file NVG.INI
+-------------------
+The contents of the file NVG.INI configures the NVG feature. You can edit this
+file with any text editor (like EDIT).
+
+You can choose whether the NVG should be activated when TDO is configured 
+to use green panel lights:
+
+[NVG_GREEN=YES]
+     or
+[NVG_GREEN=NO]
+
+
+You can do the same for the red panel lights mode:
+
+[NVG_RED=YES]
+    or
+[NVG_RED=NO]
+
+Setting both variables to NO will disable the NVG feature, however, you will 
+still have to load TSG.EXE before running Tornado.
+
+You can also control the light enhancement factor of the NVG simulation for the
+five different day/night modes of Tornado. Light magnification is handled 
+separately for the panel and for the outside world. Here's an example:
+
+[NVG_INS=0,0,0,20,20]
+[NVG_OUT=0,0,0,32,40]
+
+The first line configures the INSIDE the cockpit light enhancement (the panel).
+The second line control the brightness of everything outside the cockpit.
+
+There are 5 numbers in each line. The first number is for the daylight mode, 
+the 0 setting disables the NVG (it's foolish to fly around with NVGs at 
+daytime!). The following numbers are for the dusk/dawn and night levels 
+(in the order of increasing darkness). Higher values will give you a brighter 
+image but if the numbers are too high you won't be able to distinguish 
+different objects. 
+
+
+
+4) Hotkeys (optional)
+---------------------
+If you own the Tornado Keyboard Mapper shareware tool (TKM), version 2.0 or 
+later, you will be able to toggle the NVG on and off and adjust the 
+brightness of the NVG image "on-the-fly" by pressing a sequence of keys.
+Users who don't have TKM 2.x can use the program TKM_ID in this package to
+get NVG hotkey support (use TKM_IDWT instead if you also use the TTC Tornado 
+Time Compression Tool by Kenneth Larsen).
+
+To toggle the NVGs on or off:
+
+  Press the NUM-LOCK key to switch to knee-mode, press the "9" key on the 
+  main keyboard (NOT on the num. keypad), then press the HOME key to get back
+  to cockpit view.
+
+To increase the brightness :
+  Press the NUM-LOCK key to switch to knee-mode, press the F11 key (the 
+  increase in brightness is proportional to how often you press F11) then 
+  press the HOME key 
+
+To decrease the brightness :
+  Press the NUM-LOCK key to switch to knee-mode, press SHIFT-F11 (the decrease 
+  in brightness is proportional to how often you press SHIFT-F11) then press 
+  the HOME key 
+  
+To increase the brightness of panel lights:
+  Press the NUM-LOCK key to switch to knee-mode, press the F12 key (the 
+  increase in brightness is proportional to how often you press F11) then 
+  press the HOME key 
+
+To decrease the brightness of panel lights:
+  Press the NUM-LOCK key to switch to knee-mode, press SHIFT-F12 (the 
+  decrease in brightness is proportional to how often you press SHIFT-F12) 
+  then press the HOME key 
+
+5) The Snow Feature
+-------------------
+You will find two programs SNOW_ON.COM and SNOW_OFF.COM in the TMF package.
+After (and only after) you load TSG.EXE, you can use these programs to switch 
+the snow feature on and off (you can also use TMF form inside Tornado to do 
+this, but even then you must have TSG.EXE loaded). If snow-mode is on, most 
+objects will appear like being covered by snow. 
+
+If you start TSG with the /C command line option, most aircraft, ground 
+vehicles and some additional mil. buildings will be painted white (winter 
+camouflage), by default they will remain green.
+
+
+It's definitely not a good idea (realism-wise) to use the snow feature in 
+the ODS warzone :).
+
+6) Credits
+----------
+Thanks to Stuart Butts and Gordon L. Beck who provided me with some 
+interesting info on REAL NVGs on FSFORUM. Thanks also to Eric Joiner and 
+Basil Copeland who did the beta testing. 
+
+The snow feature was Eric's idea and he made many suggestions to improve 
+it.
+
+Many thanks to Tucker Hatfield who beta-tested the CD-ROM installation
+TSR.
+
+And (last but not least) thanks to DI for some very useful intelligence 
+on the way TDO works (but please note that DI is not responsible for this 
+patch! If you have complains/flames/praise/donations/postcards etc wrt 
+T_NVG, don't send that to DI, send it to me, see the file MANUAL.TMF for 
+my electronic address). 
+
+ 
+7) Licence terms 
+-----------------
+T_NVG and the Snow Simulation feature are part of TMF 1.03. See manual.tmf 
+for licence terms and disclaimer of warranty.
+
+Enjoy,
+
+Heinz-Bernd Eggenstein
+
+

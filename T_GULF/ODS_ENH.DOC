@@ -1,0 +1,134 @@
+======================================================================
+	    TORNADO ODS Enhancement Patch
+
+	    (for Tornado vers. 1.0d & 1.0e)
+
+	    Vers. 1.0
+	    (c) 1995 Heinz-Bernd Eggenstein, 
+		     Basil Copeland, 
+		     Eric Joiner 
+		     (TCSC Associates)
+	  
+
+	    (this is an unofficial patch, NOT a 
+	     product by Digital Integration!!!)
+
+
+
+	    for registered TCSC users only
+
+
+	    M A N U A L
+	    ___________
+	   
+	    Read carefully before installing!
+
+
+	    THIS PATCH REQUIRES TPATCHER.EXE (Version 1.0 or higher)
+
+
+======================================================================
+
+
+
+License terms
+=============
+This software is NOT Shareware, Freeware or Public Domain software. Only 
+registered users of Tornado Staff and Command College (TCSC) are allowed to
+use it. This patch may not be copied or uploaded to a BBS/online service 
+without the consent of its authors. 
+
+
+
+
+1) Do I need this patch?
+========================
+
+Some Tornado pilots have complained about the lack of "Iraqi" resistance 
+in ODS campaigns, especially the lack of enemy airstrikes. While this is 
+realistic with respect to what happened in the Gulf War of 1991, most TORNADO
+users would like a somewhat more challenging scenario. 
+
+ODS_ENH is a patch that makes ODS campaigns a bit more challenging and 
+consistent, by fixing some bugs and beefing up the Iraqi Air Force a bit.
+
+Even after applying the patch, the ODS campaigns will be easier to win than 
+the European campaigns. Try to win with only 4 IDS Tornados and 2 ADVs per 
+mission if you want a greater challenge.
+
+Because the patch requires several ODS-specific changes to the Mission 
+Planner, it will create a second copy of the Mission Planner program
+AMP.EXE, named AMPODS.EXE. The intention is that the original AMP.EXE 
+file should be used for the European Warzones, while the new file AMPODS.EXE
+is used for ODS **only**.
+
+
+2) How to install this patch
+============================
+Please read this very carefully. The installtion process is not as easy as
+with some other patches.
+  
+
+a) Unpack the distribution archive into the main Tornado directory on your 
+   hard disk, usually c:\TORNADO. You have to install TDO on your harddisk to
+   use this patch, because for obvious reasons, files on a CD-ROM can not be 
+   patched. If you got ODS_ENH with the GULF96 add-on campaign, the files
+   are probably already in the proper directory.
+
+b) Make sure you have enough disk space left! This patch will consume about 
+   800KB of diskspace, but Tornado also needs about 1.0 -1.1 MB of free 
+   diskspace to run, so you must have (say) 2MB free diskspace. Otherwise, 
+   don't use this patch!!
+
+c) Run the file ODS_ENH.BAT. This batch-file will first copy the file amp\amp.exe 
+   to the file amp\ampods.exe and then apply several patches to the new file 
+   AMP\AMPODS.EXE
+
+d) The batch file will call TPATCHER.EXE several times to perform some patches
+   Whenever you are asked whether you've read the manual, answer "Y" is you have
+   read this manual (obviously you did :) ). When a menu appears asking you 
+   what kind of patch you would like to apply, **always** enter "A" (the first
+   choice).
+
+e) With this patch, there comes a batch file TDO_ODS.BAT. Whenevber you want to 
+   uses the Operation Desert Storm part of TORNADO, run this batch file instead 
+   of TORNADO.BAT. 
+
+   Use an editor to customize TDO_ODS.BAT, e.g. to insert lines that load TSRs
+   like Kenneth Larsons Time Compression programm TTC or the TSG.EXE program 
+   used with several other patches and add-ons.
+
+
+   IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!
+   
+   You now have essentially two copies of TORNADO installed. One for flying in 
+   the European Warones, and one for operations in the Desert Storm Scenario.
+
+   Use TORNADO.BAT **ONLY** for European campaigns and missions
+
+   Use TDO_ODS.BAT **ONLY** for ODS campaigns and missions
+
+   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   
+f) Have fun.     
+
+
+3) How to ininstall the patch
+=============================
+
+This patch does not alter the Mission Planner amp.exe itself, only the newly
+created copy ampods.exe. To reverse the effect of the patch, just delete the
+file AMPODS.EXE
+
+   
+------------------------------------------------------------------------------
+
+			  DISCLAIMER
+
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+

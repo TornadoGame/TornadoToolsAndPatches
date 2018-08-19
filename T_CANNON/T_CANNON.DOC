@@ -1,0 +1,100 @@
+==================================================================
+TORNADO CANNON PATCH
+Vers 0.02á
+(c) 1995 Heinz-Bernd Eggenstein
+
+This patch requires TPATCHER.EXE Vers 1.0 or higher
+
+==================================================================
+
+What's this all about?
+=========================
+Many users of Tornado versions 1.0c - 1.0e have reported problems when 
+using a Soundblaster SB 16 sound card. Frequently, the computer locks up
+after firing the cannon. The only known cure so known until now was to 
+switch to the ADLIB driver on the PREFERENCES Screen, but this resulted 
+in slightly less realistic sounds.
+
+
+This is a beta test patch to correct the problem. It should work with the 
+following versions of Tornado:
+
+European (DI) versions 1.0c, 1.0d, 10.e
+
+American Versions 1.0c, 1.0d
+
+And American Versions 1.0d patched with the European 1.0e patch.
+
+It will not work with the Trimark Interactive 1.0e Edition of Tornado.
+        ===    
+The reason for this is that in the Trimark release, Soundblaster support 
+was intentionally disabled internally (probably because of the SB16 problems).
+
+  
+
+
+Instructions:
+
+1) copy all the files in the distribution archive of this patch to the main 
+Tornado directory. Of course, you have to run TDO from a hard disk because 
+otherwise it's difficult to patch files on a CD-ROM :)
+
+2) make backup copies of all *.exe in the FLIGHT subdirectory. Remember, this 
+is just a beta test version
+
+3) Run t_cannon.bat. This calls the T_PATCHER.EXE program that performs the 
+patch. The program will look into every file flight\ *.exe for cannon sounds. 
+If one is found, you can choose whether to install the original or one of 
+two patched sound. Using this menu, you will be able to undo the patch 
+by re-installing the original sound.
+
+4) Keep your fingers crossed
+
+5) Run Tornado and select SoundBlaster sound effects in the Preferences 
+   Screen.
+
+6) if you get the "sound card not found" message, disable the turbo switch 
+   after clicking on "Take off", then wait for a "click" and after that, 
+   re-enable the turbo switch
+
+7) Use the cannon!!!!!!!!!!!
+
+Good luck!!
+
+The new cannon sound is quite ugly. If this should work to eliminate the 
+lock-up problem, better cannon sounds could be used. I'm working on this 
+and would like to hear users' feedback on this.
+
+#include <std/disclaimer> :
+
+                          DISCLAIMER
+
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+
+I strongly recommend to make a backup of the files FLIGHT\*.exe before
+installing this patch.
+
+
+-----------------------------------------------------------------------
+            
+Please send any commentaries, especially if this patch should NOT work for 
+you, to
+
+Heinz-Bernd Eggenstein, CIS:100430,1446
+Internet: 100430.1446@compuserve.com
+
+
+Any feedback on this patch is welcome!
+
+-----------------------------------------------------------------------
+
+
+
+
+

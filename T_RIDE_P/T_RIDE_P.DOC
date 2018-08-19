@@ -1,0 +1,136 @@
+======================================================================
+	    TORNADO Terrain Following Realism Patch
+	    (for Tornado vers. 1.0 - 1.0e)
+
+	    Vers. 1.0
+	    (c) 1995 Heinz-Bernd Eggenstein, 
+		     Basil Copeland, 
+		     Eric Joiner 
+		     (TCSC Associates)
+	  
+
+	    (this is an unofficial patch, NOT a patch by DI!!!)
+
+
+
+	    for registered TCSC users only
+
+	    This patch requires TPATCHER V 1.0 or higher
+
+
+	    M A N U A L
+	    ___________
+	   
+	    Read carefully before installing!
+
+
+
+
+======================================================================
+
+
+1) License terms
+================
+This software is NOT Shareware, Freeware or Public Domain software. Only 
+registered users of Tornado Staff and Command College (TCSC) are allowed to
+use it. This patch may not be copied or uploaded to a BBS/online service 
+without the consent of its authors. 
+
+2) What is T_RIDE_P
+===================
+In DI's TORNADO simulation, you can select seven altitudes for terrain 
+following mode: 200, 300, 400, 500, 750, 1000 and 1500 ft above ground level
+(AGL).
+
+This is not entirely realistic, since REAL IDS Tornados can handle terrain
+following at altitudes as low as 100 ft AGL.
+
+This patch tries to correct this, allowing you to choose one of the 
+following terrain following "RIDE" altitudes in flight: 
+
+100, 200, 300, 400, 500, 1000, 1500 ft AGL.
+
+(note that 750 ft is no longer available).
+
+3) How to install the patch
+===========================
+Just copy all files in the distribution archive of this patch to the 
+main Tornado directory (the one with the FLIGHT and AMP subdirectories).
+
+If you run Tornado from a CD-ROM, you'll have to install TDO on a hard disk
+first (it's not so easy to patch files on a CD-ROM <g>).
+
+
+You also need the generic patching program TPATCHER.EXE which should be 
+available from the same source from where you downloaded this patch.
+
+
+Then, run the batch file T_RIDE_P. That's all.
+
+
+4) How can I restore the original, unpatched files?
+===================================================
+Just run the batch file T_RIDE_P.BAT and when prompted, choose to install 
+the original tables.
+
+
+5) Limitations
+==============
+The mission planner still offers the original RIDE altitude setting (200ft 
+... 750, 1000 & 1500 ft), so you should not select 750 ft Ride Altitude in 
+the mission planner since this is not supported by the flight module (the
+750 ft option had to be deleted to make room for the 100ft option)
+
+At 100 ft TF flight, the B-risk light in the front cockpit (under the 
+E-Scope) will be lit permanently (think of it as a reminder of the danger of
+running into power lines)
+
+If you have a 'noisy' joystick or your joystick is not calibrated correctly,
+sometimes the setting for TF ride altitude may change even if the stick is 
+physically centered. This can be dangerous when the TF altitude drops to 
+100 ft without the pilot being aware of this (note that power lines are a 
+danger at this altitude!!). If you experience this problem, first try to 
+re-calibrate the joystick, and don't use the hi-sensitivity option for the 
+joystick while in TF mode. If you want to be absolutely sure this is not 
+happening, you can switch temporarily to keyboard control (with the "7" key 
+on the main keyboard (check the "knee view" [NUM-LOCK])). 
+
+
+6) Warning:
+===========
+===========
+
+Terrain following at only 100 ft (about 30 meters) takes exceptional 
+care, it's far more dangerous than riding at 200 ft. The terrain following 
+mechanism's ability to avoid obstacles is limited by constraints imposed
+by the performance limits of the Tornado. If you are riding very fast 
+with wings swept back at 100 ft AGL, your Tornado may crash into a steep 
+hill even in TF mode because in this configuration, the Tornado can not
+pull enough Gs to jump over the obstacle even if the obstacle is 
+detected by the TF mechanism. The same can happen even on 200 ft rides, but
+less often. 
+
+Sometimes, your Tornado will pull up hard, disengage the autopilot and sound
+an alarm. This is not a bug but an emergency fail safe procedure commanded
+by the TF system if it detects that the TF system can no longer cope with the 
+terrain ahead of the Tornado. 
+
+You should also note that the TF autopilot takes only "natural terrain" into 
+consideration, not tall buildings or power lines!!!!!
+
+
+Also, note that it's not safe to drop most free fall munitions at only
+100 ft AGL. In most cases, your Tornado will be damaged by the explosion if
+you are only 100 ft above ground level!
+
+
+------------------------------------------------------------------------------
+
+			  DISCLAIMER
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+

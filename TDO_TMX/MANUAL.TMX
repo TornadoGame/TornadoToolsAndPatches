@@ -1,0 +1,302 @@
+***********************************************************************     
+	  
+	  
+	    TORNADO MISSION EXCHANGE TOOL (TMX) 1.0 
+
+      (c) 1995 Heinz-Bernd Eggenstein, Basil Copeland, Eric Joiner 
+	  (TCSC Associates)
+	  
+	    EXCLUSIVELY RELEASED FOR REGISTERED TCSC users
+
+***********************************************************************
+
+ ABSTRACT
+
+TMX is a simple but powerful tool to allow TORNADO (IBM version) users
+to exchange missions created with the Mission Planner. For example you
+can fly missions uploaded by TCSC 'staff' or design your own missions
+for others to fly. This puts you in the position of either a pilot who
+receives orders he/she has no influence on or that of a commander who 
+can give orders but doesn't have to carry them out him/herself.
+
+You can also use TMX to store missions you've flown so that you can 
+repeat them later, e.g. after discussing tactics with other TDO pilots.
+
+
+Throughout the manual, we assume that you have version 1.0c,10.d or 1.0e
+of TORNADO. If you have Version 1.0b or below, you should first update
+to Version 1.0c by executing a free update patch available from DI or
+various FTP servers, e.g.
+
+cactus.org   /pub/hitech-sim/patches/tornado (US versions of Tornado)
+belarius.robots.ox.ac.uk /FTP/hitech-sim/patches (Euro patches)
+
+
+
+0) Definition of Terms
+----------------------
+Throughout this manual, we will use the term MISSION to characterize a
+fixed initial situation in the virtual battlefield of TORNADO. This 
+situation consists of the following factors:
+
+-space      : Warzone and starting position of the players plane
+-time       : mission start time
+-weather    : visibility (fog), cloud layer, wind 
+-flightplans: the set of waypoints programmed into the AFD
+	      Wingmen and enemies also have flightplans
+-payload    : the ordnance you are carrying
+-scenery    : not necessarily the initial scenery, some structures may be
+	      destroyed. 
+-ground situation: this includes the deployment of vehicles and the 
+	      occupation status (blue/orange) of the areas on the map. 
+	      
+
+The term MISSION RESULTS stands for the difference between the initial
+mission situation and the situation at the end of the mission , e.g.
+
+-damage to the Tornado
+-destroyed targets
+-time spent to execute the mission
+-position of the Tornado at the end of the mission
+
+1) Installation
+---------------
+Copy all files in the distribution package to the main Tornado 
+directory (the directory with the AMP, FIGHT, LOG etc subdirectories).
+
+
+If you have Tornado Version 1.0c or lower, and you want to design
+mission yourself for others to play, you first have to execute a
+patch (not needed for versions 1.0d and 1.0e of Tornado). Just execute
+the batch file T_TMX_P.BAT. This patch may fail with some US-versions
+of Tornado. If it fails, you will still be able to export mission, but
+the process to do so will be slightly more inconvenient.
+
+If you later want to reverse the patch, execute T_TMX_RP.BAT
+
+
+Before using TMX to import missions, you have to execute an auto-
+configuration run. The purpose of this is to tell TMX what kind of
+sound card, joystick etc you are using. 
+
+AUTO-CONFIGURATION:
+
+First you have to make sure that all settings in the preferences screen
+of TORNADO are correct. Those settings will be used by TMX when
+importing missions designed by others.
+
+Then leave the preferences screen and fly ANY TORNADO mission, e.g. some
+Simulator Single Mission. You don't have to fly the mission to the end, 
+just press CTRL-Q after you enter the cockpit. This will take you to the 
+debrief screen. 
+
+If you have 
+  -version 1.0d or 1.0e: Press CTRL-Q to leave TORNADO
+  -version 1.0c and the TMX patch succeeded: PRESS CTRL-Q
+  -version 1.0c but the TMX patch failed: REBOOT your computer.
+  
+There should be a file gameplay.in (among other files) in the 
+DATAXCHG subdirectory.
+
+Now run TMX with the -c command line option:
+
+    TMX -c
+    
+    
+
+TMX will now create a file TMX.INI that contains your Tornado
+configuration data (joystick calibration, sound card config...).
+
+
+
+2) How to use TMX
+------------------
+There are two ways to use TMX. The first is a simple menu-driven, 
+interactive interface, the second is command line option oriented
+(resembling the way you use programs like ARJ or PKZIP). In the
+following text, only the command line interface is discussed, the menu
+driven interface should then be self-explaining.
+
+2.1) Import a mission
+---------------------
+TMX missions are stored in files which usually have the TMX file 
+extension. One example mission is included in this package, others 
+you will be able to downloaded in lib. 8 of FSFORUM on CompuServe or 
+various FTP servers on the Internet.
+
+In most cases you will get files in compressed form (e.g. files *.zip
+compressed with PKZIP), so you will first have to uncompress those
+files. The example TMX mission that comes with this package is contained
+in the file EXAMPLE.ZIP, which contains the TMX mission file and briefing 
+text files and maps.
+
+The *.TMX file must be copied to the same directory where TMX.EXE is
+stored.
+
+Now execute TMX with the -im (import mission) command line option and
+the filename as the second argument, e.g.:
+
+  TMX -im  EXAMPLE.TMX
+  
+TMX will now decode the *.TMX file and if it can decode the data
+successfully, it will write a file TMX_FLY.BAT to the Tornado main
+directory. If you are ready to fly the imported mission, execute this
+batch file.
+
+(Usually, some text and graphic files will come with the *.TMX file to
+brief the pilot for the mission. Make sure to read/print this first so
+that you know what the mission is all about. Depending on the way the mission 
+was created, a file BRIEFING can be created while importing the mission. If 
+present, the file will usually contain briefing information.)
+
+========================================================================
+NOTE: IF you are using the NVG-patch that comes with TMF 1.03, make sure
+you load the TSG.EXE TSR program included in TMF 1.03 before executing 
+TMX_FLY.BAT.
+========================================================================
+
+To import a mission taking place in the Operation Desert Storm Warzone,
+you have to own version 1.0d or higher of TORNADO.
+
+After completing the mission and pressing CTRL-Q to leave the cockpit,
+you return to the DOS prompt. Some missions may come with a tool to 
+do a debriefing. Other missions may not come with a debriefing tool, e.g.
+missions that are part of a competition. This is intended to make cheating 
+as difficult as possible. If pilots knew exactly what they have hit, they 
+could refly the mission until getting optimal results. 
+
+When flying missions uploaded by TCSC Associates as part of a contest, 
+you will be able to use the EXPORT RESULTS feature of TMX to send your 
+mission results to TCSC Associates for evaluation. (But read the data 
+security note at the end of this manual)
+
+Later on TCSC Associates might release a general DEBRIEFING tool for those 
+who want to be referees in competitions.
+
+2.2) Exporting Results
+----------------------
+To export your mission results, you can use TMX to write the results to
+a new file (e.g. results.TMX). You can write some comments into a file 
+DEBRIEF. If this file is present, it will be incorporated into the mission 
+result file.
+
+To export the results, execute TMX with the -xr (export results) command 
+line option:
+
+   TMX -xr results.tmx
+      
+
+2.3) Exporting Missions
+-----------------------
+You can export any mission that you can fly yourself, e.g.
+
+-Any of the pre-canned Single Missions
+-A "FREE FIRE" Single Mission that lets you plan your flight from
+ scratch
+-Any mission generated during a Level-1, Level-2 or Command Campaign
+
+
+After planning the mission, enter the cockpit. You don't have to fly the
+mission you want to export to the end, just press CTRL-Q to leave the
+cockpit. You will then return to the DEBRIEF screen.
+
+If you have 
+  -version 1.0d or 1.0e: Press CTRL-Q to leave TORNADO.
+  -version 1.0c and the TMX patch succeeded: PRESS QTRL-Q
+  -version 1.0c but the TMX patch failed: REBOOT your computer.
+     
+    
+At the DOS-prompt, go to the TORNADO main directory and execute 
+TMX with the -xm (export mission) command line option and a filename as
+second argument, e.g.
+
+   TMX -xm my_msn.tmx
+
+TMX will now save the mission to the file my_msn.tmx . If there is a file
+BRIEFING.OUT in the current directory, the file will be included into the
+mission file. When the recipient of the mission unpacks it using TMX, this 
+file will be created as BRIEFING in his/her current directory.
+
+
+2.4) Importing Results
+----------------------
+This feature is only useful for referees in competitions.
+
+3) Hints for creating missions
+------------------------------
+During beta-testing of this tool, it turned out that designing and flying
+TMX missions is as much fun as making up a nice story that you can use to
+brief other pilots. When you send a mission to some TDO pilot(s), don't just 
+tell them to bomb the targets under waypoints X and Y. Use your imagination 
+to invent a story that explains the situation. Why are those targets 
+important? Who are the enemies? .... You should also make sure the mission 
+is not too easy. Using the mission planner, make sure there are a few SAMs 
+along the flight path :-). 
+
+If you have TMF, or any screen-grabbing program like PCXDUMP or 
+SCREENTHIEF, make sure the pilot gets a map of the region, but you may want 
+to hide a few layers of information e.g. the enemy CAP positions and SAM/AAA
+positions. 
+
+
+If you base your mission on a FREE FIRE mission, you can plan the mission 
+from scratch, you can even choose the time at which the mission starts: click 
+on the "UP" key of the waypoint A time button. 
+
+Using a simulator mission, you can also edit the weather. But when you use 
+the Simulator Missions, make sure to adjust the 'realism' buttons (limited 
+weapons, limited fuel etc) because those settings will influence the way
+that mission is later executed after someone imports it with TMX. 
+
+
+
+
+4) License terms
+================
+This software is NOT Shareware, Freeware or Public Domain software. Only 
+registered users of Tornado Staff and Command College (TCSC) are allowed to
+use it. This patch may not be copied or uploaded to a BBS/online service 
+without the consent of its authors. 
+
+
+
+			  DISCLAIMER
+In no event shall the authors be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The authors make no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaim all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+
+===========================================================================
+		      A note concerning data security
+===========================================================================
+
+The TMX program's "export results" feature will make it possible for TMX 
+users to send mission results to competition referees.
+
+However, as a general rule of thumb, you should NEVER EVER send a file 
+generated by some shareware program to anybody you don't trust. The reason 
+is that the program may spy on your system and send back some data you
+want to keep private (e.g. the program may try to steal your CIS password).
+
+TMX does NOT spy. That is, the original version of TMX does not spy. It only
+encodes the files *.out generated by Tornado. But if you downloaded TMX from
+an FTP site (in contrast to the more tightly guarded CompuServe Forum   
+libraries), you really can never be sure who uploaded it. So, if in doubt, 
+don't send any files created by a program you don't trust to people you 
+don't trust. NEVER!
+
+The source code of TMX is available for everybody who wants to verify it 
+does nothing illegal, under the condition that the source code is not used 
+for commercial purposes.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,190 @@
+(every line in this file not starting with '[' is a comment)
+
+This file is a printer configuarion file.
+
+
+You should be able to create a file like this to configure
+tmf to work with your printer.
+
+
+
+[Title=NEC 24 pin printer, 180 DPI, Landscape]
+The driver's designation
+
+
+
+[Landscape=Yes]
+
+ Landscape=Yes : Map is rotated by 90 deg, so it can
+		 be larger
+	   NO  : The usual Portait format
+
+
+[Dots=1440]
+ Dots= <x>, where x is a multiple of 640 (if portrait format is selected)
+		    or a multiple of 480 (if landscape format is selected)
+ This is the number of dots used to print a horizontal line of a map.
+ Please note that your printer must be capable to print the
+ specified number of dots before reaching the right margin of the paper.
+
+ Supported are the following choices:
+
+ Portrait :
+ 1280  (=2*640) ;; good for 180 DPI printers
+ 1920  (=3*640) ;; you need at lest 240 DPI resolution if
+		;; you are using 8'' paper!!
+		;; good for 300 DPI laser/ink jet printers
+ 2560  (=4*640) ;; you need at least 320 DPI if the printing area
+		;; is 8'' wide
+ 3200  (=5*640) ;; 400 DPI needed for 8'' print area.
+
+
+
+ Landscape:
+
+ 960  (=2*480) ;; only 120 DPI needed  for 8'' wide paper
+ 1440 (=3*480) ;;      180  ....
+ 1920 (=4*480) ;;      240  ....
+ 2400 (=5*480) ;;      300  .... (this gives BIG maps: 8'' x 10.7''
+						      =~ 20.3 cm x 27.2 cm)
+
+
+
+
+[ColMode=Yes]
+
+	 Yes: the graphic is printed as a sequence of vertical
+	      comumns of dots. This method is used with most
+	      pin matrix printers.
+
+	      This setting is used for your printer if tranmitting data
+	      with binary representation 10011001  will result in
+	      a dot pattern like this:
+
+	       *
+
+
+	       *
+	       *
+
+
+	       *
+
+       No:    the graphic is printed as a sequence of dots
+	      along horizontal lines. Use this setting if
+	      your printer will print the binary data 10011001
+	      this way:
+
+	      *  **  *
+
+
+	      Check your printer's manual to determine what
+	      method your printer is using
+
+[ColBytes=3]
+	      Only relevant when [ColMode=Yes].
+	      Use this setting to select the number of bytes
+	      that make up a print column. For 24 needle
+	      printers, 3 bytes are used (3*8 bits=24 bits)
+
+
+
+[GStart=13,10,13,10]
+
+
+	 Sequence of control codes (in decimal notation)
+	 to send to the printer at the beginning of the graphic
+	 You can use this sequence to initialize the printers
+	 parameters like linespacing, pagelength etc.
+
+	 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 DON'T break a line that specify a list of control codes!!!!
+	 for example, [GStart=1,2,3,4,
+			     5,6,7,8]
+	 will only be parsed up to '4'!!!!!!!!!!!!!!!!!!!!!!!!
+
+[GEnd=12]
+
+	 Sequence of control codes (decimal notation)
+	 to send to the printer at the end of printing a map
+	 (12 = Formfeed control character)
+
+[LStart=27,42,39,160,5]
+
+	 Sequence of control codes (decimal notation)
+	 to send to the printer at the beginning transmitting
+	 the graphics data for one row of the graphic image.
+
+	 After sending this sequence, tmf will send
+	 k bytes of graphics data, where k is computed
+	 as follows:
+
+	 ColMode=Yes, ColBytes = x, Dots=y:
+	   ==> k = x*y
+
+	 ColMode=No, Dots=y
+	   ==> k= y/8
+
+
+
+[LEnd=13,27,74,24]
+
+	 Sequence of control codes (decimal notation)
+	 to send to the printer after transmitting
+	 the graphics data for one row of the graphic image
+
+
+
+
+[ColRev=No]
+
+	      Only relevant when [ColMode=Yes]
+	      No: the first byte transmitted is printed at the top
+	      Yes: the order is reversed
+
+		  Example Transmitting 10000001 00111100 00011000
+		  can produce the following output
+
+		  *
+
+
+					   *
+		      1st byte             *    3rd byte
+
+
+		  *
+
+
+		  *                        *
+		  *                        *
+		  *                        *
+		  *   2nd byte             *    2nd byte
+
+
+					   *
+
+
+		  *
+		  *   3rd byte                 1st byte
+
+
+					   *
+
+
+	       ==> use ColRev=No       ==> use ColRev=Yes
+
+[BitRev=No]
+
+	     No: Most significant bit in transmitted bytes
+		 contols upmost (ColMode=Yes) resp. leftmost (ColMode=No)
+		 matrix position.
+	     Yes:Least significant bit in transmitted bytes
+		 contols upmost (ColMode=Yes) resp. leftmost (ColMode=No)
+		 matrix position.
+
+	     Check your printer's manual to determine what bitorder
+	     your printer is using.
+
+
+
+

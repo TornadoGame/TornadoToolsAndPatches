@@ -1,0 +1,123 @@
+==================================================================
+	TORNADO Ordnance Management Tools
+	V. 1.00
+	(c) 1995 Heinz-Bernd Eggenstein
+==================================================================
+
+
+1) What's this all about?
+-------------------------
+TORNADO by DI is supposed to simulate a limited supply of ordnance from
+which you have to take configure your Tornados. However, this feature does
+not work correctly, making it impossible to run out of ordnance in even the
+most costly and long campaign.
+
+But there's nothing that can keep us Tornadoholics to simulate a limited
+supply of weaponry independently. This can be tedious if you do it all by
+pencil and paper, e.g. counting all the different bombs and missiles loaded
+to the up to 8 Tornados in a mission can be a pain.
+
+To assist in this task, I wrote a program ORDNANCE.EXE and a simple Excel 3.0
+spreadsheet ORDNANCE.XLS that will help you automate this process a bit.
+(There's also an identical spreadsheet file ORDNANCE.wk1 in Lotus-1-2-3 file)
+
+
+
+2) Installation
+---------------
+Copy all the files in the distribution archive to the main Tornado directory
+of your harddisk (the directory with the DATAXCHG subdirectory). That's it.
+
+3) ORDNANCE.EXE
+--------------
+This program is supposed to give you the number of weapons fired/dropped
+during the last mission that was flown in Tornado. If you are flying a
+campaign and would like to get the exact ordnance count after having flown
+a mission, leave TORNADO. Don't fly another mission because that will
+overwrite the data. You always get the ordnance count for the last mission
+flown, including simulator missions. Also DO NOT USE the Explore feature of
+the mission planner after flying a mission because this will overwrite the
+data in question as well.
+
+After leaving Tornado, make sure your working directory is the main Tornado
+directory. Executing ORDNANCE.EXE will then produce a list of the number
+of weapon items consumed in the mission. IIt will also compute the number of
+IDS and ADV Tornados lost during the mission. You can redirect the output to
+a file using the redirection command ">", e.g.
+
+
+ ORDNANCE > ord_m1.rep
+
+3.1) The file COST.ORD
+----------------------
+ORDNANCE.EXE will also compute the total cost of the munitions consumed in
+this mission. This computation is based on an estimation of the price tags of
+the different munitions stored in the file cost.ord (in US dollars).
+
+3.2) Limitations
+----------------
+The current version has the following limitations:
+
+a) fuel consumption is not taken into account
+b) the program assumes that all computer controlled Tornado drones
+   drop/fire all their munitions during the mission, so that all payload is
+   "delivered". This includes a load of 2 Sidewinders per IDS and 4 AIM-9
+   Sidewinders plus 4 Skyflash missiles per ADV Tornado. In contrast to
+   this, stores that the human pilot returns to the airfield are not
+   included in the count of used munitions.
+c) The loss of ECM/countermeasure pots and drop tanks is not accounted for
+
+
+4) ORDNANCE.XLS
+---------------
+This is a simple but hopefully useful Excel 3.0 spreadsheet that might help
+you to do the boring calculations included and will allow you to keep track
+of mission costs during an ongoing campaign. See the comments at the bottom
+of the spreadsheet document for further information.
+
+
+
+5) License terms/disclaimer
+---------------------------
+
+--------------LICENSE AGREEMENT---------------------------------------------
+You are allowed to make as many copies of this package as you like and
+give them to others, provided:
+
+a) the copies are complete and unaltered.
+
+b) those copies are given to others free of charge or charging only a
+   reasonable copy fee. Commercial use of this software is explicitly
+   forbidden unless authorized by the author.
+
+If you have already registered one of the "Donationware" products by the same
+author (e.g. TMF, TLE, SHOWPT2) or if you are a registered TCSC user, then
+ORDNANCE is Freeware for you,
+
+			 OTHERWISE,
+
+you can use ORDNANCE free for a test period of 30 days. If you want to use it
+after this perid, YOU'LL HAVE TO PAY!
+
+No, don't send any money to the author (well, if you absolutely insist ;-)
+), instead make a donation to an organization (Red Cross, 'Doctors without
+Borders', UNHCR, UNICEF, ...) that helps countries that are devastated by
+war like Bosnia, Somalia, Afghanistan, Angola, .... .
+
+Your donation should be
+   <amount you wanted to donate before reading this>
+ + <at least 7.5 US $ in your currency>
+
+
+
+#include <standard.disclaimer>:
+
+			  DISCLAIMER
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+

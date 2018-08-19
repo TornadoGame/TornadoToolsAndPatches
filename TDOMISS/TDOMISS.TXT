@@ -1,0 +1,21 @@
+This is the first revision of a program to extract a mission summary
+from Tornado's .mis and .dta files, listing mission objectives and
+waypoints.
+
+Copy it to a directory in your path and e.g.
+
+	tdomiss miss1 >miss1.txt
+
+or
+
+	tdomiss \games\tornado\amp\map5\miss1
+
+will extract the info for mission 1, to the screen or to disk as required.
+
+Any comments and suggestions gratefully received, particularly any info
+on the contents of .dta and .mis files so I can improve the output.
+
+tdomiss has been tested on the missions supplied with 1.0e Europe.
+
+--
+keith.bedford@uk03.bull.co.uk

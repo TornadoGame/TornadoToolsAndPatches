@@ -1,0 +1,110 @@
+
+	MANUAL
+
+	TORNADO SPOUSE REMINDER TOOL (TSRT)  V. 1.0
+
+
+
+0) Installing TSRT
+------------------
+Copy all files of the distribution archive to the Tornado
+main directory (the directory with the flight subdirectory).
+If you are running TDO off a CD-ROM, copy the file
+PILOTPAN.BT2 (in the flight subdirectory) from the CD to
+the FLIGHT subdirectory of the mirror directory structure
+on the hard-disk.
+
+
+1) How to prepare a digitized photo
+-----------------------------------
+
+You need a scanner and a photo print (or a photo that is
+already in a digitized format (e.g. a photo on a Kodak
+Photo-CD) as raw material. You also have to use a bitmap
+processing program (e.g. Paintshop Pro (Shareware)) to
+prepare a photo.
+
+
+First you should cut an appropriate section from the photo
+you want to put on Tornado's dashboard. Best suited are
+portraits showing the person's head only: Tornado's dashboard
+area is very small and the graphic resolution is not very
+fine grained, so you will not be able to distinguish
+different people on a big family reunion photo.
+
+
+The first step of the image processing should be to convert
+the photo in a black and white photo, converting the image
+to a grey scale image.
+
+
+Tornado uses a video mode that fills the monitor screen
+with an image consisting of 320 x 200 pixels. Because VGA
+monitors have an aspect ratio (the quotient width / height)
+of 4:3, this means that each pixel in this video mode is
+slightly higher than it is wide.
+
+However, scanned or digitized photos usually use square
+pixels, as used by the most widespread video modes for
+MS Windows (640 x 480, 800 x 600 etc.).
+
+
+To compensate for the non-square pixels in the TORNADO
+cockpit, you first have to stretch the photo HORIZONTALLY
+by a factor of 1.2.
+
+
+Then you should resample (resize) the photo so that it's height
+is about 43 pixels (the height of the TDO dashboard), and
+it's width is chosen to maintain the photo's aspect ratio
+(*after* the horizontal enlargement). The width should not exceed
+60 pixels.
+
+Finally save the icon-sized resulting bitmap as a BMP
+(uncompressed) file.
+
+Then start the program TSRT with the file's name as parameter.
+
+
+You can use the batch file TSRT_REV.BAT to reverse the
+effect of the program.
+
+
+
+
+2) Pre-canned dashboard stickers
+--------------------------------
+For those TDO pilots who are not married, a photo of Claudia
+Schiffer is included as a dashboard sticker.
+
+For those who keep forgetting how many children they have,
+there's a memo sticker included which can easily be edited
+(e.g. with the Paintbrush program that is included in Windows).
+
+
+For kids, there's a Garfield sticker in the file garfld.bmp
+
+
+
+Have fun,
+
+
+Heinz-Bernd Eggenstein
+
+
+
+			  DISCLAIMER
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software
+and manual. The author makes no warranties, either express or implied, with
+respect to this software and the manual, and expressly disclaims all implied
+warranties, including without limitation, the warranty of merchantability,
+political correctness and of fitness for a particular purpose.
+
+
+
+
+
+
+
+

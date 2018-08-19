@@ -1,0 +1,61 @@
+==================================================================
+TORNADO GENERIC PATCHING PROGRAM
+
+Vers 1.0
+(c) 1995 Heinz-Bernd Eggenstein
+
+
+==================================================================
+
+What's this all about?
+=========================
+
+TPATCHER.EXE is a generic patching program, that means that it can
+perform a variety of patches as instructed by INI-files that come
+with the individual patches itself. This eliminates the need to 
+include the code that performs the patching itself with each and every
+patch.
+
+Instructions:
+
+1) copy all the files in the distribution archive of this patch to the main 
+Tornado directory. Of course, you have to run TDO from a hard disk because 
+otherwise it's difficult to patch files on a CD-ROM :)
+
+2) Download and unzip any patches you want to perform into the main
+   Tornado directory.
+   
+3) Read the manual file that comes with every patch carefully. 
+
+4) With every patch, there will come a batch file that has to be
+   executed. This batch file will call TPATCHER.EXE with the appropriate 
+   command line arguments.
+
+
+#include <std/disclaimer> :
+
+                          DISCLAIMER
+
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+
+
+-----------------------------------------------------------------------
+            
+Please send any commentaries, especially if any patch should NOT work for 
+you, to
+
+Heinz-Bernd Eggenstein, CIS:100430,1446
+Internet: 100430.1446@compuserve.com
+
+-----------------------------------------------------------------------
+
+
+
+
+

@@ -1,0 +1,45 @@
+all : tkm.com tkm_wttc.com tkm_ds.com tkm_dswt.com tkm_id.com tkm_idwt.com tkm.zip
+
+tkm.com : tkm.obj
+	tlink  /t tkm.obj
+tkm_wttc.com: tkm2.obj 
+	tlink  /t tkm2.obj , tkm_wttc.com
+
+tkm_ds.com: tkm3.obj  
+	tlink  /t tkm3.obj , tkm_ds.com
+
+tkm_dswt.com: tkm4.obj 
+	tlink  /t tkm4.obj , tkm_dswt.com
+
+tkm_id.com: tkm5.obj 
+	tlink  /t tkm5.obj , tkm_id.com
+
+tkm_idwt.com: tkm6.obj 
+	tlink  /t tkm6.obj , tkm_idwt.com
+
+
+
+tkm.zip : tkm.com tkm_wttc.com tkm_ds.com tkm_dswt.com readme.tkm makefile tkm.asm keymapus.inc keymapuk.inc        
+	pkzip tkm tkm.com tkm_wttc.com tkm_ds.com tkm_dswt.com readme.tkm makefile tkm.asm keymapus.inc keymapuk.inc
+
+
+.asm.obj:
+  TASM /m  {$< }
+
+tkm.obj : tkm.asm 
+
+tkm2.obj: tkm.asm 
+	tasm /m  /DTTC tkm , tkm2.obj
+
+tkm3.obj: tkm.asm keymapUK.inc
+	tasm /m  /DDBL_SHIFT  tkm , tkm3.obj
+
+tkm4.obj: tkm.asm keymapUK.inc
+	tasm /m  /DDBL_SHIFT /DTTC  tkm , tkm4.obj
+
+tkm5.obj: tkm.asm 
+	tasm /m  /DDBL_SHIFT /DIDMAP /DFORCE_NVG tkm , tkm5.obj
+
+tkm6.obj: tkm.asm 
+	tasm /m  /DDBL_SHIFT /DTTC /DIDMAP /DFORCE_NVG tkm , tkm6.obj
+

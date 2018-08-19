@@ -1,0 +1,67 @@
+TORNADO LOGBOOK EDITOR 1.2
+See registration info at the end of this file
+
+0. A note for TLE 1.1 users
+===========================
+Version 1.2 of TLE fixes some bugs in version 1.1, and the new version is
+also smaller than the previous one. You will no longer need the files in the 
+KEY subdirectory that was created while installing version 1.1. If you have 
+already "registered" your copy of version 1.1 (see below), version 1.2 is
+FREE.
+
+
+1. What is TLE?
+===============
+
+TLE (Tornado logbook editor) is a utility program that helps you
+edit pilot log files created by TORNADO (by DI), versions 1.0 - 1.0e. 
+
+
+2. What are the main functions of TLE?
+======================================
+
+    -make your pilot immortal!
+    -promote/demote your pilot to any rank
+    -recall your pilot from death after a crash, or
+     liberate him/her from a POW camp ;-)
+    -clone pilots
+
+
+3. How do you install TLE?
+==========================
+Unpacking tle110.zip with the -d option of pkunzip to the Tornado directory
+            !!!!!!!!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!!!!!!!           
+is all you have to do:
+
+C:\GAMES\TORNADO> PKUNZIP -d TLE.110.ZIP
+
+4. How do you edit a TORNADO log file?
+=======================================
+
+see detailed information in the file manual.tle stored in tle110.zip
+----------------------REGISTRATION------------------------------------------
+You are allowed to use TLE free of charge for 30 days. If you
+want to use it after this trial period, YOU HAVE TO PAY FOR IT!
+
+No, don't send any money to the author (well, if you absolutely insist ;-)
+), instead make a donation to an organization (Red Cross, 'Doctors without
+Borders', UNHCR, UNICEF, ...) that helps countries that are devastated by 
+war like Bosnia, Somalia, Afghanistan, Angola, .... .
+
+Your donation should be
+   <amount you wanted to donate before reading this>
+ + <at least 7.5 US $ in your currency>
+----------------------------------------------------------------------------
+
+
+
+Have fun,
+
+Heinz-Bernd Eggenstein
+Repkestr. 26
+59368 Werne
+Fed. Rep. of Germany
+
+CIS: [100430,1446]
+
+

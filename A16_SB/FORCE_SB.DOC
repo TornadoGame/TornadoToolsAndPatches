@@ -1,0 +1,110 @@
+                        Action 16 SB patch  0.03á
+                        =========================
+
+------------------------------------------------------------------------------
+
+			  DISCLAIMER
+
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+------------------------------------------------------------------------------
+
+
+
+
+FORCE_SB.EXE is a simple tool to force Soundblaster sound effects for
+the in-flight simulation part of the "Action 16" budget version of 
+Tornado. In this version, 
+
+
+Installation:
+=============
+
+0) Run Tornado and select "SOUNDBLASTER" as your sound card in the 
+Preferences Screen.
+
+1) You must have TORNADO installed on a HARD DISK first.
+For the patch to worjk, you have to rename and add certain files 
+which for obvious reasons can not be done on a CD-ROM. To install
+from CD-ROM to hard disk, you can use the XCOPY command
+of MS-DOS (consult your MS-DOS manual if necessary)
+
+2) make a complete back-up of all files in the FLIGHT subdirectory of the 
+TORNADO directory, e.g. put a blank diskette in drive A: and execute
+
+copy c:\tornado\flight\*.* a:
+
+(the file path to the flight subdirectory may vary on your system)
+
+3)  rename two files:
+
+
+
+flight\flight.exe ->  flight__.exe
+flight\desert.exe ->  desert__.exe
+
+copy FORCE_SB.EXE twice: to flight\flight.exe and flight\desert.exe
+
+4) If (and only if) you had version 1.05 or earlier of TMF (Tornado Map
+Fax-machine) installed before installing this patch, you'll have to do
+the following:
+
+copy fl.exe flight\flight__.exe
+copy fl.exe flight\desert__.exe
+
+
+
+
+Now run Tornado.                      
+
+
+
+Technical stuff: 
+================
+What will FORCE_SB.EXE do?  
+Whenever Tornado enters the 'flight phase' of the simulation, 
+the program amp.exe (which is started by the TORNADO.BAT batch file)
+will write the necessary data for the flight-simulation to the
+DATAXCHG directory. Then amp.exe creates a temporary 'swap' file 
+containing the program's data and code, and then load either flight.exe
+or desert.exe as overlays. The loaded program will read the files
+written to the DATAXCHG directory and start the in-flight-simulation.
+
+The install procedure results in FORCE_SB.EXE being called instead of 
+flight.exe or desert.exe. FORCE_SB.EXE will now set the byte with offset
+6 in the file DATAXCHG\GAMEPLAY.IN to the value 4 (2: Speaker, 4: SB, 
+6 : AdLib). Then flight.exe/desert.exe is started as an overlay. If
+the SB-driver code in flight.exe/desert.exe is still intact, this will
+force SB-effects.
+
+To uninstall:
+==========
+
+Restore the file names to the state before you installed FORCE_SB:
+1) delete flight.exe and desert.exe
+2) rename flight__.exe to flight.exe
+3) rename desert__.exe to desert.exe
+
+If this fails, you can still use the back-up you made (see step 2 ) to restore
+the contents of the flight subdirectory! 
+
+
+Good luck,
+Heinz-Bernd Eggenstein,
+internet   : hbeggenst@aol.com
+
+
+
+
+
+
+
+
+
+
+

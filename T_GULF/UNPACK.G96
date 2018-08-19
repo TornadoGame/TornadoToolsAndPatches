@@ -1,0 +1,26 @@
+Unpacking instructions for T_GULF.exe
+
+To unpack this archive, you need the password that you got in response to 
+your TCSC registration. Unpack all the files into the main TORNADO directory.
+
+Use the command 
+
+
+T_Gulf -sPASSWORD 
+
+
+where PASSWORD is replaced by the TCSC registration password.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+NOTE: Unlike earlier TCSC add-ons, the password command line option 
+is -sPASSWORD , no longer -gPASSWORD !! If you have problems unpacking the 
+self-extracting file, check that the you are using the correct password, and 
+not (say) -sgPASSWORD 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+TCSC Associates
+
+
+
+

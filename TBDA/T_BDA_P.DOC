@@ -1,0 +1,400 @@
+======================================================================
+	    TORNADO BDA PATCH & BDA CAMPAIGN TOOL
+	    (for Tornado vers. 1.0 - 1.0e)
+
+	    Vers. 1.0
+	    (c) 1995 Heinz-Bernd Eggenstein, 
+		     Basil Copeland, 
+		     Eric Joiner 
+		     (TCSC Associates)
+	  
+
+	    (this is an unofficial patch, NOT a patch by DI!!!)
+
+
+
+	    for registered TCSC users only
+
+	    This patch requires TPATCHER V 1.0 or higher
+
+
+	    M A N U A L
+	    ___________
+	   
+	    Read carefully before installing!
+
+
+
+
+======================================================================
+
+
+License terms
+=============
+This software is NOT Shareware, Freeware or Public Domain software. Only 
+registered users of Tornado Staff and Command College (TCSC) are allowed to
+use it. This patch may not be copied or uploaded to a BBS/online service 
+without the consent of its authors. 
+
+
+
+0) What is T_BDA_P ??
+---------------------
+T_BDA_P consists of three parts:
+
+a) a patching script that will modify your AMP.EXE file that is part of 
+   the Tornado distribution package and is stored in the AMP subdirectory of 
+   the main TORNADO directory. 
+
+   YOU NEED THE PROGRAM TPATCHER.EXE TO EXECUTE THIS PATCH!!!
+
+
+b) a memory resident program (TSG_135.EXE). If you are already using the  
+   NVG and SNOW patch that is part of the TMF program, this new TSR replaces 
+   the older version of TSG*.EXE that is delivered with those packages.
+   As new tools are released, new version of TSG will replace the version
+   you have now. Always use the most recent one.
+
+
+c) A tool (BDA.EXE) that allows you to get a listing of all targets hit 
+   (with the exceptions of airfields) during the last mission flown in a 
+   level 1, level 2 or command campaign, after exiting from TORNADO.
+
+
+1) Why use T_BDA_P?
+-------------------
+T_BDA_P was written for those who want to maintain statistics of the 
+effectiveness campaign missions, e.g. while doing a group campaign via 
+e-mail. 
+
+Alternatively, you can copy the debriefing screen (either by pencil and
+paper or with a screen-grabbing program. Infact, the TSG_???.EXE program
+is a screen-grabbing program for 16 color screenshots of mission planner
+and debriefing screens.
+
+However, this has two major drawbacks:
+
+a) Copying the screen with pencil and paper is tedious, while screenshots 
+   are much bigger than ASCII listings of the screens so that sending 
+   screenshots via e-mail is more expensive/takes more time.
+
+b) The debriefing screen has only a limited number of lines or 'slots' for 
+   hit targets. If you and your wingmen happen to hit a lot of targets of
+   different types, some target reports will not be listed because they 
+   don't fit on the screen. BDA will list ALL targets, with the only exception
+   of airfields. 
+
+BDA also has some additional features:
+
+a) it will estimate the cost of the IDS and ADV missions. This is based on
+   guesstimates of ordnance costs saved in the file cost.ord
+ 
+b) it will provide a SCORE for the mission as a whole and for the human pilot's 
+   performance.
+
+
+2) How does it work?
+--------------------
+T_BDA_P will modify AMP.EXE so that when you press the OK button on the 
+debriefing screen after a campaign mission, files BDA*.* will be written 
+to the Tornado main directory. When you exit Tornado later, make the TORNADO
+main directory your working directory and start BDA.EXE
+
+  BDA
+
+You will then get a listing of enemy and allied targets hit (both mobile and
+fixed targets). Note that the list will include targets hit hy yourself and 
+targets hit by drones. The number of targets that you destroyed yourself will
+be given in parenthesis. 
+
+
+Example output :
+-------------------------------------------------------------------------
+TORNADO CAMPAIGN BDA TOOL (Vers. 1.0)
+(c) 1995 TCSC Associates
+
+
+
+Ordnance Summary:
+-----------------
+GPB1000.............0
+RET1000............22
+LGB1000.............9
+BL755..............24
+JP233...............0
+ALARM...............4
+AIM-9L.............18
+Skyflash............8
+IDS.................1
+ADV.................0
+
+
+Total cost : 61664000 $ for 8 sorties
+
+Total Enemy Targets Destroyed:
+------------------------------
+Fixed:
+  5   (1) Bunker
+  1   (1) Cooling Tower
+  1   (1) EWR
+  2       Mil. Building
+  1       Rail Bridge
+  2       TV Mast
+  1   (1) Large Ind. Unit
+  6       Camouflaged Tent
+
+Mobile:
+  1       Il-76
+  1       Su-25
+  1   (1) MAZ 543 TEL
+  2   (2) ZSU-23
+  1   (1) Strela 10
+  1       MiG-27
+
+
+Preliminary Mission Score: 75 = 9.38 per sortie
+
+Score for Flight Leader  : 22 (=29.33%)
+
+Total Allied Losses
+-------------------
+Fixed:
+  2       Bunker
+  1       Control Tower
+  1       POL tank Farm
+  2       Comm. Center
+  2       Road Bridge
+  9       Rail Bridge
+  1       Munition Store
+
+Mobile:
+  1       A-10
+  1       Tornado IDS
+
+Value of Allied Losses: 66
+
+
+Net Score:   9
+==========
+-------------------------------------------------------------------------
+
+
+If the list is so long that it will scroll the screen, 
+you can use the pipe '|' syntax
+
+ BDA | more 
+
+to read it one page at a time. 
+
+You can also redirect it to a file,
+
+BDA > my_rep.txt
+
+or append it to an existing file:
+
+BDA >> email.txt
+
+or send it to a printer, e.g.:
+
+BDA > LPT1:
+
+
+2b) How does it really work, I mean technically??
+-------------------------------------------------
+To generate the files BDA*.*, quite a few bytes of code are needed, 
+and I could not figure out how to put all the instructions needed for 
+this task into AMP.EXE, which is generated by an optimizing compiler and
+it is quite hard to find any space left you can use for additional 
+instructions. But I found a few bytes in a convenient section of the 
+program that was left over from debugging code in AMP.EXE. This code 
+is overwritten by T_BDA_P.EXE with some bytes that causes the AMP.EXE to
+branch into the memory resident program TSG_???.EXE. 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+THIS IS THE REASON WHY YOU HAVE TO LOAD TSG_???.EXE EVERYTIME BEFORE YOU
+LOAD TORNADO AFTER APPLYING THE PATCH!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Again: After applying the patch, you will only be able to use TORNADO if 
+you have a version of TSG*.EXE loaded in memory! If you don't like this, 
+DON'T install this patch.
+
+IF you apply the patch and then start TORNADO without having loaded TSG
+before, strange things may happen. Most likely, the computer will behave 
+as if you had pressed the Prt-Scr key: if your PRN: printer is off-line,
+the computer will beep. If your printer is on-line, garbage will be sent
+to your printer. No BDA*.* files will be written!
+
+
+
+3) OK, I still want to install this thing!
+------------------------------------------
+Well, I have warned you, but here you go: :)
+
+a) MAKE A BACKUP-COPY of the AMP\AMP.EXE file, if you haven't already done 
+   that prior to installing another patch (e.g. the TCSC morale patch). 
+   Without this back-up YOU WILL NOT BE ABLE TO REVERSE THE PATCH!!!! 
+
+b) copy all files in the distribution archive to the Tornado main directory.
+
+c) execute the program T_BDA_P.BAT
+
+d) follow the on-screen instructions
+
+If the patch fails, you probably have already applied the patch earlier or 
+you have a version of Tornado not known to the author of the patching program
+
+
+4) Using the BDA utility
+------------------------
+Remember you first have to load the TSG_???.EXE program before starting 
+TORNADO after applying the patch. 
+
+After finishing you mission in a level 1/2 or command campaign and pressing
+the OK button, the BDA*.* files will be generated automatically by the code
+inserted in the patching process. Exit Tornado (you will want to save your 
+campaign before!). Back on the DOS prompt, make sure you are in the main
+TORNADO directory. Then execute BDA, see the hints in part 2 on how to best
+make use of the output of BDA.
+
+
+5) How can I restore the original, unpatched AMP.EXE file?
+----------------------------------------------------------
+Copy your backup copy of AMP\AMP.EXE (see part 3a) over the patched file.
+You should always restore the original AMP.EXE file before applying an 
+official, DI patch.
+
+
+
+
+
+
+			  DISCLAIMER
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+
+I strongly recommend to make a backup of the file AMP\AMP.exe before
+installing this patch.
+----------------------------------------------------------------------------
+
+================================  F   Y   I  ================================
+Other products by the same author:
+
+TORNADO tools:
+
+Tornado Map Fax Machine: A Program that will allow you to capture and print
+			 screens (= maps !!) of the mission planner for use
+			 during flight, mission planning and in a campaign
+			 archive.
+			
+			 Version 1.03 also offers an NVG patch which will
+			 give you night vision capability and a snow patch 
+			 that will optionally simulate a snow covered 
+			 landscape.
+			
+			 Shareware (10 US $).
+
+
+Tornado Keyboard Mapper: A safer and more convenient keyboard layout for
+			 TORNADO: It moves the ejection trigger CTRL-E
+			 away from the radar-off switch CTRL-R ("Let's turn
+			 the radar offffff...sh*t!"). Other keyboard function 
+			 modifications optional, special version for german 
+			 keyboards available. Shareware, 7.5 US $
+
+Tornado Logbook Editor:  Decode the encrypted logbook files! Use it to
+			 -resurrect pilots killed by mistake
+			 -free pilots from POW camps :)
+			 -rename the infamous GrpCpt deFault
+			 -correct the rank of your pilot, if TORNADO
+			  refuses to give you a promotion because of a
+			  promotion bug in some versions of TORNADO
+			 -clone pilots to make backups 
+			 Shareware, 7.5 US $
+
+SHOWPT2:                 View the digitized 256 color pictures without 
+			 loading Tornado, and convert them to BMP files 
+			 which can (for example) be used as MS-Windows 
+			 "wallpaper".  Shareware, 7.5 US $
+
+TSRT:                    Tornado Spouse Reminder Tool: Would you like to
+			 see your wife/husband/girl-/boy-friend more often
+			 but you can't because you spend so much time flying
+			 TORNADO? Do both at the same time! Use TSRT to attach
+			 a picture of your loved-one on Tornado's dashboard!
+			 (Freeware)
+
+
+ORDNANCE:                A tool and an Excel 3.0 spreadsheet that will 
+			 allow you to simulate a limited supply of ordnance
+			 without having to do the routine calculations by 
+			 pencil and paper. Try to win a campaign with minimal
+			 costs.
+
+
+
+Gen. Chuck Yeager's Air Combat (CYAC) tools:
+
+CYAC_2J:                 Use a second joystick or a joystick with a throttle
+			 wheel to control the thrust, instead of the keyboard.
+			 It also has an optional programmable fire-button- and
+			 view-selection-feature. For Versions 1.0 and 1.1
+			 Shareware, 7.5 US $
+ 
+ -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+Interesting TORNADO add-ons by OTHER authors:
+
+TCC by Kenneth Larsen    "Tornado Time Compression" will give you the 
+			 option of speeding up events in the simulation 
+			 to "fast-forward" the simulation to the most 
+			 interesting part of a mission. Freeware
+ -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - 
+TCSC by Basil Copeland,
+	Eric Joiner &  
+	Heinz-Bernd Eggenstein
+
+			 "Tornado Command and Staff College" is a tutorial
+			 written as a Windows 3.x helpfile. It focuses
+			 on Command Campaigns. If you have difficulties 
+			 surviving and winning Command Campaigns, this is the
+			 definitive tutorial.
+
+			 (SHAREWARE, 10US$)
+
+ONLY for registered TCSC users:
+
+TMORALEP by Heinz-Bernd Eggenstein:
+			 "Tornado Morale and Hard Gameplay Patch". This is an
+			 unofficial patch of Tornado to correct a slight bug
+			 having to do with the way Tornado evaluates the 
+			 success of your campaign missions.
+			 Optional: a patch to make winning a campaign more 
+			 difficult.
+
+TMX by Heinz-Bernd Eggenstein:
+			 "Tornado Mission Exchange Tool". Fly missions 
+			 designed by others and design missions for others
+			 to fly. Can be used for competitions. 
+			 Missions will be downloadable from FSFORUM or FTP
+
+
+"Liberation Campaign":   Additional Command Campaign for Warzone 2                            
+			 should be much harder to win than the campaigns that
+			 come with Tornado. A real challenge.    
+			
+T_PROZAC:                A tool to artificially prolong a campaign. You can 
+			 use T_PROZAC to lift orange morale and cure their 
+			 battle fatigue.
+
+
+
+-----------------------------------------------------------------------------
+
+
+

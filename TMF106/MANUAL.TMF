@@ -1,0 +1,649 @@
+==================================================================
+
+	T O R N A D O    M A P    F A X    M A C H I N E (TMF)
+
+
+	(c) 1996 Heinz-Bernd Eggenstein
+		 Repkestr. 26
+		 59368 Werne
+		 Fed. Rep. of Germany
+
+        Version 1.06
+
+	M A N U A L
+	___________
+
+	Read carefully before installing TMF!
+
+===================================================================
+
+0) Tornado versions supported
+-----------------------------
+TMF was tested on both European and US versions 1.0 ... 1.0e of Tornado.
+
+**********************************************************************
+CD-ROM versions: because TMF requires you to rename one or two files
+		 of the TORNADO files, installing TMF for CD-ROM based
+		 TORNADO installations is different than that for  
+		 hard disk based installations. Read the file README.CD
+		 for further information.
+**********************************************************************
+
+0.5) NVG & Snow Bonus
+---------------------
+This version of TMF also contains a Night Vision Goggles patch as a bonus.
+You will only be able to use this feature if you also install TMF. 
+The night-vision-goggles patch will simulate NVG (helmet mounted devices 
+that enhance night vision). See the file manual.nvg for details.
+
+Inspired by an idea by Eric Joiner, I also implemented a "snow simulation" 
+option for the European Warzones. If you turn this option on, you will see 
+that the ground, the trees and some buildings are covered with 'snow'.  
+
+
+1) What is TMF ?
+----------------
+
+TMF is a set of programs to be used with the TORNADO flight
+simulation by DI. TMF will allow you to print screencopies
+of the Tornado Mission Planner's screens to a printer without
+having to leave Tornado. This can be used to print maps that
+contain information about the mission you have just designed
+with the Mission Planner, like the flightpaths of the involved
+Tornados, enemy AAA and SAM positions, roads (emergency landings!) 
+etc. Real pilots carry maps in transparent pockets attached to the 
+upper trouser legs of their G-suits (those are called kneepads, 
+I think). Now you can do about the same!
+
+Application of paper maps:
+
+In flight:
+
+1) as a backup for the computerized maps you can use with the
+   navigational displays inside the cockpit (in case those are
+   shot to pieces)
+2) as a help to evade enemy threats (the on-board maps don't show
+   enemy AAA and SAM positions)
+3) as a help to find protection by friendly forces in case you are
+   chased
+4) to better identify individual targets in 'target rich' areas, 
+   especially for LBG attacks ("On what side of the runway is the
+   command bunker I wanted to hit??")
+5) to find targets of opportunity in case you have 'payload' left 
+   after attacking all pre-planned targets.
+   
+
+Outside the cockpit:
+
+1) to better evaluate the progress of a campaign: you can
+   compare 'Day <x>' and 'Day <x+n>' maps.
+
+2) to impress friends: "there I was, flying this extremely
+   dangerous mission ..." :-)
+
+
+
+
+
+2) Why not use Graphics.com that comes with MS-DOS ?
+----------------------------------------------------
+For black & white printers, graphics.com does a poor job
+mapping different colors of Tornado Mission Planner maps
+to shades of gray. But if you have a color printer supported
+by graphics.com, you should give graphics.com a try. TMF does
+not support color printers!
+
+
+3) Hardware and Software Requirements
+-------------------------------------
+
+Software:
+- - - - -
+Tornado (version 1.0 - 1.0e)
+MS-DOS 5.0 or higher
+about 5 KB free conventional memory in addition to TORNADO's 
+memory requirements (Version 1.0e requires about 600KB)
+
+Hardware:
+- - - - -
+-AT 80386,i486 or higher
+-VGA graphics card
+-mouse
+-about 1MB free disk space to run Tornado plus
+       154kB free disk space for every map you want to save
+- NEC P2200 or compatible 24 pin printer (like the EPSON LQ 1500)
+  or
+  HP Deskjet, HPLaserJet or compatible PCL level 3 (or higher) 
+  printer.
+  Other printers require that you write a printer configuration 
+  file (see 5.1).
+
+
+4) Installation
+---------------
+The following installation requires that a few files of the TORNADO 
+distribution files are renamed. If you run TORNADO on a CD-ROM, you can't
+rename the files on the CD-ROM. For an installation guide for CD-ROM based
+TORNADO installations, read the file README.CD first.
+
+
+You should unpack all the files in the TMF archive to your Tornado directory
+(the directory with the LOG, AMP and FLIGHT subdirectories on your hard disk). 
+
+You can install TMF either automatically or manually. To install 
+automatically, just execute TMF_INST.EXE.
+
+To install the package manually, do the following:
+
+1) Make sure you really copied all the TMF files to the Tornado directory.
+
+2) make back-up copies of the files
+   FLIGHT\FLIGHT.EXE
+   FLIGHT\DESERT.EXE (if present)
+
+3) rename FLIGHT\FLIGHT.EXE to FLIGHT\FLIGHT_.EXE
+   rename FLIGHT\DESERT.EXE to FLIGHT\DESERT_.EXE (if present)
+   It is absolutely essential that the new filenames are the old
+   filenames plus an underscore '_' character at the end.
+
+4) make sure these files are really renamed! Otherwise, they will
+   be overwritten during the next step and TORNADO won't work
+   anymore (that's why I recommend making backups of flight.exe &
+   desert.exe)
+
+5) copy the file FL.EXE of this package to the file FLIGHT\FLIGHT.EXE
+   *and* to the file FLIGHT\DESERT.EXE
+
+   after doing this, the FLIGHT subdir. must contain the following files
+
+   name          size     comment
+   ------------------------------------------------------
+   FLIGHT_.EXE   big      was FLIGHT.EXE, part of TORNADO
+   FLIGHT.EXE    small    was FL.EXE, part of TMF package 
+
+   for TORNADO versions 1.0d -1.0e, also:
+
+   DESERT_.EXE   big      was DESERT.EXE, part of TORNADO
+   DESERT.EXE    small    was FL.EXE, part of TMF package
+   
+6) that's all
+
+
+
+
+5) De-Installation
+------------------
+I hate programs that can only be deinstalled by re-installing
+the original program. Therefore, de-installing this package is easy:
+
+0) if you have installed the NVG patch, you should reverse that patch first
+   (see the file manual.nvg) for instructions).
+ 
+1) Remove the files *.pcf, tmf.exe, tmf.ini and tsg.exe from
+   your TORNADO directory.
+2) copy the file FLIGHT\FLIGHT_.EXE to the file FLIGHT\FLIGHT.EXE,
+   overwriting the latter file.
+   if present, also copy the file FLIGHT\DESERT_.EXE to the file
+   FLIGHT\DESERT.EXE.
+
+3) Make sure the files in step 2) were copied correctly.
+   The files FLIGHT\FLIGHT.EXE and (if present) FLIGHT\DESERT.EXE
+   must be about 570KB to 610KB long (depending on the version of Tornado you 
+   are using), otherwise step 2 failed.
+
+4) remove the files FLIGHT\FLIGHT_.EXE and FLIGHT\DESERT_.EXE (if present)
+
+
+5) finished!
+
+NOTE:  YOU SHOULD ALWAYS UNINSTALL TMF BEFORE APPLYING A PATCH TO TORNADO.
+       TMF IS NOT VERY VERSION-DEPENDENT, I EXPECT IT TO WORK WITH ANY 
+       FUTURE PATCH OF TORNADO (IF THERE WILL BE ANY ADDITIONAL PATCHES)
+
+
+5) How to use TMF?
+------------------
+This is how to use TMF:
+
+Before starting TORNADO, execute TSG.EXE. This is a memory-resident
+program and will stay in memory until you reboot your computer.
+(Therefore, I strongly recommend that you reboot your computer 
+immediately after you exit from TORNADO). 
+			      
+
+After executing TSG.EXE, start TORNADO. 
+
+NOTE: TSG will use about 4KB of conventional memory, so you have to make 
+      sure that you have at least 604 KB free conventional memory. This 
+      should not be too difficult. Note that TORNADO does not require or 
+      support EMS memory, so you can configure your memory manager (EMM386, 
+      QEMM, ...) NOT to provide EMS memory services. This means that you 
+      don't need an EMS "Page-Frame". Not allocating a Page-Frame frees 
+      lots of 'upper memory' that you will be able to use for device drivers 
+      etc. that can be loaded into upper memory.
+
+Inside the Mission Planner, prepare a map you want to print, and
+when ready, press the 'Prt Scr' key (usually next to SCROLL-LOCK).
+Wait for a 'beep' (this takes about 1 to 5 seconds).
+If you hear the 'beep' immediately after you pressed the Print-key,
+TSG refused to dump the screen because of lack of free diskspace.
+To ensure proper operation of TORNADO, TSG requires about 1.154 MB
+of free disk space on the current drive for dumping a screen to a BMP file.
+
+You can dump several screens as long as there's sufficient free disk
+space available, the maps will be saved to different files.
+
+*********************************************************************
+If you don't have a soundcard and selected 'PC Speaker' as a sound
+device, please turn the Music feature off for both aesthetic and
+technical reasons: the speaker 'music' and TMF's 'beep' may interfere
+with each other.
+*********************************************************************
+
+If you want to print the map(s) written to disk, select the 'Review'
+field of the options menu.
+
+
+Instead of the Review Feature, you will now see the user-interface
+of TMF. First you will have to click on the "OK" Button in the
+message box.
+
+The User-Interface was written with BORLAND C++ TurboVision and
+should be quite self explaining.
+
+At the top of the screen, the main menu bar has at least one entry: FILE.
+You can open this menu by clicking on FILE or by pressing ALT-F.
+
+The File Menu comprises the following functions:
+
+1) About: Display copyright information
+2) Open : Display and print maps
+3) Change Dir: Change the working directory
+4) Delete: delete a BMP file
+5) Printer Setup: Select a Printer Configuration File and output device
+6) Mode: Select European Scenario or Desert Storm Scenario Mode
+7) Save Config. : Save the name of the printer configuration file
+		  to be used as a default
+8) Exit : leave the program. You will then enter the Review
+   screen of Tornado.
+9) Quick Exit: leave the program and go back directly to the mission 
+   planner
+
+If TMF finds the file NVG.INI in the directory where it is installed, then
+the menu bar will have additional "Snow" and "NVG" entries used to configure
+the snow- and NVG-features. See MANUAL.NVG for further information on these
+features.
+
+
+*************************************************************************
+	    N O T E   F O R   OS/2   A N D   MS-WINDOWS  U S E R S
+	    ======================================================
+During Beta-Testing, problems with starting TMF from inside TORNADO
+were reported. To avoid these problems, you should use two separate 
+DOS boxes under OS/2 2.1 to use TMF: One window to execute TSG and then 
+TORNADO, and another box to execute TMF in. After 'screengrabbing' a map, 
+switch to the TMF box to print the map (see also sec. 5.3 and 7.)
+(HOWEVER, YOU WILL NOT BE ABLE TO USE THE NVG FEATURE IN THIS CONFIGURATION!)
+
+It has also been reported that in OS/2 DOS-Boxes, loading TSG.EXE *high*
+can resolve some potential problems.
+
+No problems have so far been reported under OS/2 Warp V3, so you should be 
+able to install the NVG patch under OS2 Warp without problems.
+**************************************************************************
+
+
+5.1 Selecting a Printer Configuration File
+------------------------------------------
+Before you print some maps, you have to make sure that the correct
+printer configuration file is loaded. The printer configuration files
+contain all information that TMF needs to send graphic images to your
+printer.
+
+A description of the loaded printer configuration will be displayed
+at the left hand side of the bottom line on the screen, the status-line.
+
+To change the printer configuration, choose the 'Printer Setup' menu
+item (or click on  the left hand side of the status line). Then select
+a *.pcf file. The following files come with this package (see the file
+'necp24p.pcl' for information about writting your own *.PCF files):
+
+	      printer             printing       max. image        print
+	      (and compat.)       resolution     size              orientation
+---------------------------------------------------------------------
+NEC24P.PCF    NEC/Epson LQ 24 pin 180 dpi        7.1'' x 5.3 ''    portrait
+NEC24L.PCF    NEC/Epson LQ 24 pin 180 dpi        8''   x 10.7''    landscape
+
+PCL_P.PCF     HP Desk/LaserJet    300 dpi        6.4'' x 4.8''     portrait
+PCL_L.PCF     HP Desk/LaserJet    300 dpi        6.4'' x 8.5''     landscape
+PCL_LBIG.PCF  HP Desk/LaserJet    300 dpi        8''   x 10.7 ''   landscape
+
+
+
+NOTE: If you have a laser printer with less than 1MB memory installed,
+      you might not be able to print maps using PCL_L.PCF or
+      PCL_LBIG.PCF
+
+After selecting a Printer Configuration File, you have to select the
+output device that the print data will be sent to. You can choose
+from PRN:, LPT1:, LPT2:, LPT3: and FILE. The FILE option will allow
+you to write the printing commands to a file, so you can print the map(s)
+on a different computer's printer (e.g. your notebook computer's printer
+or the printer at the office next door :) ).
+
+You can specify the file to print to in the same dialog box. This is
+only relevant if you select FILE as output device.
+All output will be appended to this file, so you can print several maps
+to a single file. But you should be aware that the quantity of data 
+transmitted to the printer depends on the printer configuration (type
+of printer and size of map) you are using, and you must take care that 
+the diskette you are using has enough free disk space left. The following
+table gives approximate file length for print data for ONE map.
+
+printer conf.     print data
+file              length
+------------------------------
+NEC24P.PCF         160 KB
+NEC24L.PCF         346 KB
+
+PCL_P.PCF          356 KB
+PCL_L.PCF          633 KB
+PCL_LBIG.PCF       983 KB
+
+This means that you can put up to 4 maps printed with PCL_P.PCF onto 
+a single 1.44 MB diskette, but only 1 map created with PCL_LBIG.PCF.
+
+So if you want to print on a printer NOT connected to the computer 
+you are running TORNADO on, you should set aside a sufficient number of 
+empty & formatted diskettes before running TORNADO.
+
+
+5.2) Saving the configuration
+- - - - - - - - - - - - - - -
+If you want a specific printer configuration file and output device
+selection to be loaded whenever you start TMF, select the 'Save Config'
+menu item.
+
+5.3) Selecting the scenario mode
+- - - - - - - - - - - - - - - -
+If you start TMF from within the Mission Planner, TMF will automatically
+detect whether you edited a mission in the european (standard) scenario
+or the (add-on) 'Desert Storm' scenario. The current scenario is
+displayed on the right hand side of the status line. You should print
+screenshots from european maps only in 'Europe' mode, and Desert Storm
+Maps in 'Desert Storm' mode. So if for some reason the scenario displayed
+in the status line does not match the scenario of the map you want to
+print, click on the 'Mode' menu item (or the right hand side of the
+status line). Then a dialog will appear that allows you to set the
+scenario.
+
+5.4) Deleting BMP files
+- - - - - - - - - - - -
+If you want to delete a BMP file (maybe after printing it, or because
+TSG can't make any additional screenshots because running out of
+diskspace), select the 'Delete' menu entry. Only files with the BMP
+filename-extension can be deleted!
+
+
+!!!!!!!!!!!!!!!!!!!!!IMPORTANT!!!!!!!!!!!!!
+Each screenshot consumes about 154KB of disk-space. Tornado itself needs
+about 1 MB of free disk-space. If you are using a screen-grabbing
+program other than TSG, YOU SHOULD NOT TAKE SO MANY SCREEN-SHOTS
+THAT TORNADO RUNS OUT OF DISK SPACE. If Tornado doesn't have 1 MB of free
+disk space left, you won't be able to enter TMF! So in this case, you
+can't even delete the *.BMP files that used TORNADO's diskspace from
+within Tornado.
+
+TSG has a build in diskspace test that will prevent saving screenshots 
+if the free disk space is less than 1.154 MB!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+5.5) Open Menu Entry
+- - - - - - - - - -
+Select a BMP file you want to view and/or print. This file will then
+be loaded. Loading of the file is quite slow at the moment, but printing
+is even slower, so this doesn't matter ;-).
+
+Now you have to select a rectangular portion of the map to be printed
+(the 'Printing Area'). First, use the mouse to set the upper left corner of 
+the Printing Area. Push a mouse button when the correct point is selected.
+
+Then select the lower right corner of the printing area likewise.
+You can use this feature to remove the mission planner's buttons from
+the map graphics.
+
+If you don't want to print the displayed map, just push the ESC key
+before selecting the lower right corner of the printing area.
+
+If you want to print the whole screen, just click a mouse button
+after each "beep" without moving the mouse.
+
+NOTE: It depends on the type of printer you are using whether selecting
+      only a small portion of the map as the printing area will speed
+      the process of printing. E.g. output is faster on my old NEC P2200
+      for smaller printing areas, but with most laser-printers, there
+      won't be a difference. Note you will save ink/ribbon/toner by 
+      restricting the printing area.
+
+
+Now the color-reduction of the map will be performed and the
+map will be printed on the selected printer device.
+
+The part of the map that has already been sent to the printer will be
+erased on the screen, so you can monitor the progress of the printing.
+
+After sending data to the printer is completed, the main menu will
+appear.
+
+
+6) Things to keep in mind
+-------------------------
+Although the 'readability' of the printed maps (e.g. the ability to
+distinguish the shades of grey) is (IMHO) satisfactory for pin printers
+and quite good for inkjet/laser printers, you should not pack too
+much information into your maps. Instead, distribute the information you 
+need on two or more maps.
+
+For example:
+
+"thread &
+ assistance map"  : shows enemy and friendly AAA and SAM, your flight path etc.
+"EWR map"         : shows enemy and friendly EWR coverage
+"Target Area Map" : a close up of the target area, especially
+		    useful with LGB attacks when you have to hit
+		    specific structures among many similar targets
+"Campaign History
+ Map"             : Shows friendly and enemy forces and EWR coverage
+
+You can 'enrich' those maps by opening mission planner windows
+that contain information you would like to record:
+
+For example, include the met. report window in a map and you'll never
+again forget windspeed & -direction while trying to land, or you can
+include the 'Campaign Situation Window' in your "Campaign History Maps".
+The 'map scale window' is always useful to include in your maps, so that you 
+can measure distances easily.
+
+7) Executing TMF from the DOS Prompt
+------------------------------------
+You don't have to enter Tornado to start TMF. If you want to start
+TMF from the DOS prompt, change the current directory to the
+TORNADO directory where TMF.EXE is located, and start TMF.EXE.
+You will now be able to view/print BMP files saved during some earlier
+TORNADO sessions.
+
+Whenever you start BMF from the DOS prompt, make sure to set the correct
+scenario mode (see 5.3 ) that matches the map you want to print.
+When TMF is started without command line parameters, it defaults to
+the european scenario, while TMF /d will put TMF in Desert Storm mode.
+
+8) Saving maps for later use
+----------------------------
+Once loaded into memory, the TSG.EXE screen-dumping program saves maps 
+in the files D0000000.BMP, D0000001.BMP etc. in the TORNADO directory.
+TSG does not check whether those files already exist, existing files
+(from previous TORNADO-sessions) will be OVERWRITTEN. So if you 
+want to save some of the maps you dumped (e.g. for documenting a 
+campaign), you must rename those *.BMP files  or/and copy them to another
+directory. You might want to convert the *.BMP files to some compressed
+format (like GIF or BMP-RLE) for more efficient storage. There are lots
+of shareware/public domain programs available to do this conversion.
+
+9) Changing the Review Button Text 
+----------------------------------
+If you have the European version of Tornado, you can easily change
+the caption of the Review-Option-Button. Use a "Hex-Editor" to look for 
+this byte sequence in the file AMP.EXE: 
+
+"Explore",0Ah,"Review",0Ah,"Log",0Ah
+
+You can then change "Review" to (say) "Fax/Rv".
+
+NOTE: You may not be able to do this with the North-American version
+      of Tornado, because that version uses a different copy-protection
+      scheme than the European version. Many copy-protection schemes
+      try to prevent modification of executables and/or encrypt the code
+      which is then decrypted after loading into memory.
+
+
+10) Is this Public Domain, Shareware, or What?
+----------------------------------------------
+TMF is not Freeware! If you have already registered TMF 1.02, the update 
+to version 1.03 is free. But otherwise, if you want to use TMF after a 
+30 days trial period, you have to PAY. No, don't send any money to me, 
+instead make a donation to any humanitarian organization (e.g. Red Cross, 
+'Doctors without Borders', UNHCR, UNICEF ...) that provides help to countries 
+devastated by war.
+
+Your donation should be at least:
+   <amount you wanted to donate before reading this>
+ + 10 US $ (or equivalent in your country's currency)
+
+
+
+Please send bug reports, suggestions for improvements, tested printer
+configuration files, flames, praise etc to
+
+Internet  : hbeggenst@aol.com
+snail-mail: Heinz-Bernd Eggenstein, Repkestr. 26, 59368 Werne, Germany
+
+Have fun,
+
+Heinz-Bernd 'Bicycle Repairman' Eggenstein
+
+
+
+#include <standard.disclaimer>:
+--------------LICENSE AGREEMENT---------------------------------------------
+You are allowed to make as many copies of the TMF package as you like and
+give them to others, provided:
+
+a) the copies are complete and unaltered. 
+
+b) those copies are given to others free of charge or charging only a
+   reasonable copy fee. Commercial use of this software is explicitly 
+   forbidden unless authorized by the author.
+
+			  DISCLAIMER
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software 
+and manual. The author makes no warranties, either express or implied, with 
+respect to this software and the manual, and expressly disclaims all implied 
+warranties, including without limitation, the warranty of merchantability, 
+political correctness and of fitness for a particular purpose.
+
+
+I strongly recommend to make backups of the files flight\*.exe before
+installing TMF.
+----------------------------------------------------------------------------
+
+================================  F   Y   I  ================================
+Other products form the same author:
+
+TORNADO tools:
+Tornado Keyboard Mapper: A safer and more convenient keyboard layout for
+			 TORNADO: It moves the ejection trigger CTRL-E
+			 away from the radar-off switch CTRL-R ("Let's turn
+			 the radar offffff...sh*t!"). Other keyboard function 
+			 modifications optional, special version for german 
+			 keyboards available. Shareware, 7.5 US $
+
+Tornado Logbook Editor:  Decode the encrypted logbook files! Use it to
+			 -resurrect pilots killed by mistake
+			 -free pilots from POW camps :)
+			 -rename the infamous GrpCpt deFault
+			 -correct the rank of your pilot, if TORNADO
+			  refuses to give you a promotion because of a
+			  promotion bug in some versions of TORNADO
+			 -clone pilots to make backups 
+			  Shareware, 7.5 US $
+
+SHOWPT2:                 View the digitized 256 color pictures without 
+			 loading Tornado, and convert them to BMP files 
+			 which can (for example) be used as MS-Windows 
+			 "wallpaper".  Shareware, 7.5 US $
+
+
+Gen. Chuck Yeager's Air Combat (CYAC) tools:
+
+CYAC_2J:                 Use a second joystick or a joystick with a throttle
+			 wheel to control the thrust, instead of the keyboard.
+			 It also has an optional programmable fire-button- and
+			 view-selection-feature. Works with version 1.0 of 
+			 CYAC, not yet tested with version 1.1.  
+			 Shareware, 7.5 US $
+ 
+ -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+Interesting TORNADO add-ons by OTHER authors:
+
+TCC by Kenneth Larsen    "Tornado Time Compression" will give you the 
+			 option of speeding up events in the simulation 
+			 to "fast-forward" the simulation to the most 
+			 interesting part of a mission. Freeware
+ -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - 
+TCSC by Basil Copeland,
+	Eric Joiner &  
+	Heinz-Bernd Eggenstein
+
+			 "Tornado Command and Staff College" is a tutorial
+			 written as a Windows 3.x helpfile. It focuses
+			 on Command Campaigns. If you have difficulties 
+			 surviving and winning Command Campaigns, this is the
+			 definitive tutorial.
+
+			 (SHAREWARE, 10US$)
+
+Soon to appear, ONLY for registered TCSC users:
+
+TMORALEP by Heinz-Bernd Eggenstein:
+			 "Tornado Morale and Hard Gameplay Patch". This is an
+			 unofficial patch of Tornado to correct a slight bug
+			 having to do with the way Tornado evaluates the 
+			 success of your campaign missions.
+			 Optional: a patch to make winning a campaign more 
+			 difficult.
+
+TMX by Heinz-Bernd Eggenstein:
+			 "Tornado Mission Exchange Tool". Fly missions 
+			 designed by others and design missions for others
+			 to fly. Can be used for competitions. Missions will be
+			 downloadable from FSFORUM or FTP, e.g.:
+			 
+			 -Take out training camps of terrorists in the Middle
+			  East
+			
+			 -Prevent the shipment of stolen super-secret NATO 
+			  hardware to a foreign power.
+			
+			 -Find a route for the evacuation of an orphanage as 
+			  part of a peace-keeping mission
+
+
+"Liberation Campaigns":  Additional Command Campaigns for all 4 Warzones which                           
+			 should be much harder to win than the campaigns that
+			 come with Tornado. A real challenge.    
+			
+
+-----------------------------------------------------------------------------

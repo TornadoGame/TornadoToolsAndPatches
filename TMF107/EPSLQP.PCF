@@ -1,0 +1,13 @@
+
+See the file nec24l.pcf for details
+[Title=EPSON LQ 1500, 180 DPI, Portrait]
+[Landscape=No]
+[Dots=1280]
+[ColMode=Yes]
+[ColBytes=3]
+[GStart=13,10,13,10]
+[GEnd=12]
+[LStart=27,42,39,0,5]
+[LEnd=13,27,74,24]
+[ColRev=No]
+[BitRev=No]

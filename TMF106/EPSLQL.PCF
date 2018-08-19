@@ -1,0 +1,19 @@
+(every line in this file not starting with '[' is a comment)
+
+This file is a printer configuarion file for the EPSON LQ1500 and
+compatible printer. It's not tested and is the same as the NEC 24
+pin *.pcf file.
+
+[Title=Epson LQ 1500 printer, 180 DPI, Landscape]
+[Landscape=Yes]
+[Dots=1440]
+[ColMode=Yes]
+[ColBytes=3]
+[GStart=13,10,13,10]
+[GEnd=12]
+[LStart=27,42,39,160,5]
+[LEnd=13,27,74,24]
+[ColRev=No]
+[BitRev=No]
+
+

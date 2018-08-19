@@ -1,0 +1,22 @@
+(every line in this file not starting with '[' is a comment)
+
+This file is a printer configuarion file.
+
+
+You should be able to create a file like this to configure
+tmf to work with your printer.
+
+See the file nec24l.pcf for details
+
+
+[Title=NEC 24 pin printer, 180 DPI, Portrait]
+[Landscape=No]
+[Dots=1280]
+[ColMode=Yes]
+[ColBytes=3]
+[GStart=13,10,13,10]
+[GEnd=12]
+[LStart=27,42,39,0,5]
+[LEnd=13,27,74,24]
+[ColRev=No]
+[BitRev=No]

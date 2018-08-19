@@ -1,0 +1,133 @@
+***********************************************************************
+
+
+	    TORNADO MORALE PATCH & HARD GAMEPLAY OPTION 2.0
+
+      (c) 1995 Heinz-Bernd Eggenstein, Basil Copeland, Eric Joiner
+
+	    EXCLUSIVELY RELEASED FOR REGISTERED TCSC users
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!  This patch requires the generic Tornado patching program    !!
+!!  TPATCHER.EXE                                                !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+
+***********************************************************************
+
+ ABSTRACT
+
+Tornado Morale Patch is an unofficial patch, not supported by DI, for
+versions 1.0 - 1.0e of Tornado.
+It corrects a bug in the way Tornado evaluates the success of missions.
+Because of this bug, TORNADO will not calculate the impact on morale
+correctly that the destruction of certain targets should have.
+
+
+
+An additional "hard gameplay" option allows the user to modify the Tornado
+code in a way that will make it more difficult to win a campaign in the
+European warzones of Tornado.
+
+For campaign play in the Desert Storm Scenario, you should apply the Desert
+Storm morale patch option. 
+
+But note that if you want to perform a campaign in the European Warzones 1-3, 
+=============================================================================
+you will have to switch back to either the fixed morale table or the 
+=============================================================================
+"hard gameplay" option.
+=============================================================================
+
+
+
+1) How to install the patch
+===========================
+Just copy all the files in the distribution archive to the Tornado directory
+(the directory with the AMP, FLIGHT and LOG subdirectories). Make sure the 
+generic Tornado patching program TPATCHER.EXE is in the same directory.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+   PLEASE MAKE A BACKUP COPY OF THE FILE AMP\AMP.EXE BEFORE RUNNING THE
+   PATCH PROGRAM!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2) How to execute the patch
+===========================
+Run tmoralep.bat and follow the instructions on the screen. TMORALEP.BAT will
+tell you the status of your AMP.EXE file. There are three posibilities:
+
+a) AMP.EXE is the original file as distributed by DI, with a slightly flawed
+   table in it
+b) AMP.EXE contains the corrected table
+c) AMP.EXE contains the "Hard Gameplay" patch.
+d) AMP.EXE contains the ODS morale patch
+
+You can then select which patch you want to apply.
+
+
+3) How to reverse the patch
+===========================
+If you want to reverse the patch, just copy your backup copy of AMP.EXE
+to the AMP subdirectory, overwriting the patched version. You can also
+reverse the patch by running tmoralep and selecting the option that will
+write the original table to AMP.EXE
+
+You SHOULD always reverse the patch before applying an official patch by DI.
+If you the official patch updates Tornado to one of the versions 1.0-1.0e,
+you should then apply the morale patch again.
+
+
+4) Switching between European and Desert Storm Warzones
+=======================================================
+When fighting a campaign (level 1,2 or command campaign) you should always
+have a patch installed for the appropriate Warzone. This means that if you
+are fighting a Euro-Campaign and then want to go to an ODS campaign (or vice
+versa), you should first apply the correct patch for the new warzone.
+
+
+To make this easier, this package comes with 4 batch files:
+
+ORIG_TAB.BAT : Make sure the original (flawed) table is installed
+
+FIXD_TAB.BAT : Make sure the fixed table is installed
+
+HARD_TAB.BAT : Make sure the "hard gameplay table" is used
+
+ODS_TAB.BAT  : Make sure the ODS morale table is active
+
+
+You can execute one of these batch files before starting Tornado, or you can
+include them in your own batch files, e.g. you could write one batch file
+to start up Tornado for European Warzone campaigning and one for ODS
+campaigns.
+
+
+
+
+
+5) License terms
+================
+This patch is NOT Shareware, Freeware or Public Domain software. Only
+registered users of Tornado Staff and Command College (TCSC) are allowed to
+use it. This patch may not be copied or uploaded to a BBS/online service
+without the consent of its authors.
+
+Disclaimer:
+
+			  DISCLAIMER
+In no event shall the author be liable for any direct, indirect, special,
+incidental, emotional or consequential damages with respect to this software
+and manual. The author makes no warranties, either express or implied, with
+respect to this software and the manual, and expressly disclaims all implied
+warranties, including without limitation, the warranty of merchantability,
+political correctness and of fitness for a particular purpose.
+
+
+
+
+
+
+
+

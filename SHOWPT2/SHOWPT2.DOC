@@ -1,0 +1,148 @@
+================================
+	SHOWPT2
+Tornado Digipics Viewer and
+PT2->BMP converter
+V 1.1
+September 1994
+================================
+
+The digitized 256 color pictures of TORNADO (versions 1.0 thru 1.0e) are 
+stored in files with the pt2 extension in the digipics subdirectory. DI used a
+simple, but quite effective compression algorithm to compress these images.
+
+The SHOWPT2 program can be used to view these images from DOS or WINDOWS 
+without using TORNADO. It can also be used to generate a BITMAP (*.BMP) 
+representation of these pictures.
+
+Usually SHOWPT2 will produce 320x200 pixel images which are exact copies of 
+TORNADO's digitized picrtures. But SHOWPT2 can also produce 230x240 pixel BMP 
+images (aspect ratio of 4:3), which avoids distortions when you use them as 
+"wallpaper" with video modes like 640x480, 800x600 and 1024x768.
+Another option is "border clipping". Some digitized pictures don't cover the 
+whole screen and are bordered by black bars. The "border clipping" option
+will remove those black bars.
+
+
+To install showpt2.exe, copy it to a directory on your harddisk and add this 
+directory to the PATH environment variable (or copy showpt2 to your DOS 
+directory). 
+
+
+To execute showpt2, use the following calling syntax
+
+To view a pt2 file:
+showpt2 <pt2-filename> 
+
+To convert to a bmp file:
+showpt2 <pt2-filename> <bmp-filename>
+
+To convert to a bitmap with a 4:3 aspect ratio:
+
+showpt2 <pt2-filename> <bmp-filename> /ar
+
+To enable "border clipping", use the following syntax:
+
+showpt2 <pt2-filename> <bmp-filename> /bc
+
+You can also combine the two options:
+
+showpt2 <pt2-filename> <bmp-filename> /ar /bc
+
+Examples: 
+
+showpt2 c:\games\tornado\digipics\patriot.pt2
+
+showpt2 c:\games\tornado\digipics\mig29.pt2 c:\win31\wallp.bmp /ar /bc
+
+
+
+Included in this package is a batch file (conv_all.bat) that will allow you 
+to convert all *.pt2 files automatically. It will create a the directory 
+"C:\TMP_PT2" and save all converted BMP pictures to this directory. Make sure
+there's enough free diskspace on your "C" drive before running CONV_ALL.BAT
+(about 2-3 MB).
+
+The batch file must be run in your TORNADO directory.
+
+You can start CONV_ALL with optional /AR and/or /BC command line options,
+e.g.:
+
+..\conv_all /AR /BC  
+[aspect ratio correction and border clipping]
+
+or
+
+..\conv_all
+
+[no ar correction, no border clipping].
+
+
+	      ***************IMPORTANT*******************
+Please note that the digitized pictures in TORNADO are protected under
+DI's copyright. This means that you should NOT distribute BMP-files 
+generated with SHOWPT2. You should use them exclusively for your private
+use.
+	      *******************************************
+
+
+----------------------REGISTRATION------------------------------------------
+You are allowed to use showpt2 free of charge for 30 days. If you
+want to use it after this trial period, YOU HAVE TO PAY FOR IT!
+
+No, don't send any money to the author (well, if you absolutely insist ;-)
+), instead make a donation to an organization (CARE, Red Cross, ...)
+that helps countries that are devastated by war like Bosnia, Somalia,
+Afghanistan, Angola, .... .
+
+Your donation should be
+   <amount you wanted to donate before reading this>
+ + <at least 7.5 US $ in your currency>
+
+If you have already registered an earlier version of showpt2, the update
+is free.
+----------------------------------------------------------------------------
+
+
+
+Have fun,
+
+Heinz-Bernd Eggenstein
+Repkestr. 26
+D-59368 Werne
+Fed. Rep. of Germany
+
+CIS:  100430,1446
+---------------------------------------------------------------------------
+From the same author:
+
+TORNADO tools:
+Tornado Keyboard Mapper: (TKM) A safer and more convenient keybaord layout 
+			 for TORNADO: It moves the ejection trigger CTRL-E
+			 away from the radar off switch CTRL-R. Other
+			 keyboard function modifications optional,
+			 special version for german keyboards available
+
+Tornado Logbook Editor:  (TLE) Decode the encrypted logbook files! Use it to
+			 -resurrect pilots killed by mistake
+			 -free pilots from POW camps :)
+			 -rename the infamous GrpCpt deFault
+			 -correct the rank of your pilot, if TORNADO
+			  refuses to give you a promotion because of a
+			  promotion bug in some versions of TORNADO
+			 -clone pilots to make backups
+
+Tornado Map Fax Machine: (TMF) Print snapshots of the Mission Planners Screen
+			 as a kneepad map without leaving TORNADO.
+			 Works with most 24-needle, ink jet and laser
+			 printers.
+
+
+Gen. Chuck Yeager's Air Combat:
+
+CYAC_2j:                Use a second joystick or a joystick with a throttle
+			wheel to control the thrust, instead of the keyboard.
+			It also has an optinal programmable fire-button- and
+			view-selection-feature. Works with version 1.0
+			of CYAC, not yet tested with version 1.1
+
+
